@@ -121,6 +121,10 @@ npm test
 
 The importer tests check source preservation, image handling, code whitespace, missing embeds, verified embed recovery, and repeatable offline imports. The website build validates article front matter and renders every published post.
 
-## Preview hosting
+## Hosting
 
-`.openai/hosting.json` identifies the private Sites preview. `.site-preview/` is an ignored, separate publishing checkout so the original GitHub remote and local repository history remain intact. It is a deployment copy, not the editing source. Production content and site source stay in this checkout. A custom domain has not been attached yet; `iondy.com` can be connected now that the design is chosen.
+The site is published to GitHub Pages at [iondy.com](https://iondy.com). `.github/workflows/deploy.yml` builds it with Node 24 and deploys `dist/` on every push to `main`; you can also start it by hand from the repository's Actions tab. The custom domain is set in the repository's Pages settings, so the build doesn't need a `CNAME` file.
+
+DNS is managed at GoDaddy. `iondy.com` has A records for GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), and `www` is a CNAME to `sirluk.github.io`, which GitHub redirects to `iondy.com`. A `_github-pages-challenge-sirluk` TXT record verifies the domain for the `sirluk` account.
+
+`.openai/hosting.json` and the ignored `.site-preview/` checkout belong to the earlier private ChatGPT Sites preview and are not used by the GitHub Pages deploy.
