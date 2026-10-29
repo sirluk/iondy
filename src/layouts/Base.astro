@@ -1,33 +1,23 @@
 ---
 import '@fontsource-variable/inter';
-import '@fontsource-variable/newsreader';
 import '@fontsource-variable/jetbrains-mono';
-import '@fontsource-variable/ibm-plex-sans';
-import '@fontsource-variable/ibm-plex-sans/wght-italic.css';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
 import '@fontsource-variable/geist';
 import '@fontsource-variable/geist/wght-italic.css';
 import '@fontsource-variable/geist-mono';
-import '@fontsource-variable/source-serif-4/opsz.css';
-import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '@fontsource-variable/source-serif-4/wght-italic.css';
 import '../styles/site.css';
-import '../styles/looks/index.css';
-import '../styles/looks/paper.css';
-import '../styles/looks/margin.css';
-import '../styles/looks/quiet.css';
-import '../styles/looks/folio.css';
+import '../styles/quiet.css';
 import '../styles/slop.css';
-import DesignSwitcher from '../components/DesignSwitcher.astro';
 import SlopSlider from '../components/SlopSlider.astro';
 import Icon from '../components/Icon.astro';
-import { defaultLook, directions, slopLevels } from '../lib/directions';
+import { slopLevels } from '../lib/slop';
+// html[data-look="quiet"] scopes quiet.css and slop.css on top of the shared rules in site.css.
 interface Props { title?: string; description?: string; active?: string; noindex?: boolean; }
 const { title = 'Lukas Hauzenberger — iondy', description = 'Projects, research, and things learned along the way. A personal notebook by Lukas Hauzenberger.', active = '', noindex = false } = Astro.props;
 const links = [{ label: 'Writing', href: '/writing/' }, { label: 'Projects', href: '/projects/' }, { label: 'About', href: '/about/' }];
 ---
 <!doctype html>
-<html lang="en" data-look={defaultLook}>
+<html lang="en" data-look="quiet">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,31 +30,16 @@ const links = [{ label: 'Writing', href: '/writing/' }, { label: 'Projects', hre
     <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title="iondy — Writing" href="/rss.xml" />
-    <script define:vars={{ directionIds: directions.map((direction) => direction.id), defaultLook, slopMax: slopLevels.length - 1 }}>
+    <script define:vars={{ slopMax: slopLevels.length - 1 }}>
       (() => {
-        const params = new URLSearchParams(location.search);
-        const preview = params.get('preview') === '1';
+        const param = new URLSearchParams(location.search).get('slop');
         let stored = '';
-        let storedSlop = '';
-        try {
-          stored = localStorage.getItem('iondy-look') || '';
-          storedSlop = localStorage.getItem('iondy-slop') || '';
-        } catch {}
-        const requested = params.get('look') || stored || defaultLook;
-        const look = requested === 'afterhours' ? 'paper' : requested;
-        const selected = directionIds.includes(look) ? look : defaultLook;
-        document.documentElement.dataset.look = selected;
+        try { stored = localStorage.getItem('iondy-slop') || ''; } catch {}
         // data-slop lists every level up to the chosen one ("1 2 3"), so CSS can match "level 2 or more" with [data-slop~='2'].
-        const slopParam = params.get('slop');
-        const slop = Math.min(slopMax, Math.max(0, Number.parseInt(slopParam ?? (preview ? '' : storedSlop), 10) || 0));
+        const slop = Math.min(slopMax, Math.max(0, Number.parseInt(param ?? stored, 10) || 0));
         document.documentElement.dataset.slop = Array.from({ length: slop }, (_, i) => i + 1).join(' ');
         document.documentElement.style.setProperty('--slop-level', String(slop));
-        document.documentElement.dataset.preview = String(preview);
-        document.documentElement.style.colorScheme = 'light';
-        if (!preview && params.has('look')) {
-          try { localStorage.setItem('iondy-look', selected); } catch {}
-        }
-        if (!preview && slopParam !== null) {
+        if (param !== null) {
           try { localStorage.setItem('iondy-slop', String(slop)); } catch {}
         }
       })();
@@ -89,6 +64,5 @@ const links = [{ label: 'Writing', href: '/writing/' }, { label: 'Projects', hre
         </footer>
       </div>
     </div>
-    <DesignSwitcher />
   </body>
 </html>

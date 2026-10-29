@@ -149,7 +149,7 @@
     & .about-aside svg { display: block; color: var(--accent); }
     & .about-aside > a:hover { background: var(--accent-soft); color: var(--accent); }
 
-    & .site-footer { flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin-top: 120px; padding: 40px 0 120px; border-top: 1px solid var(--line); text-align: center; }
+    & .site-footer { flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin-top: 120px; padding: 40px 0 64px; border-top: 1px solid var(--line); text-align: center; }
     & .footer-name { font: 850 19px/1.3 var(--sans); letter-spacing: -.03em; }
     & .footer-links { justify-content: center; gap: 10px; font-size: 13px; }
     & .footer-links a { padding: 8px 16px; border: 1px solid rgb(124 58 237 / .16); border-radius: 999px; background: var(--glass); font-weight: 650; color: var(--accent); }
@@ -212,7 +212,7 @@
       & .about-copy { padding: 26px; }
       & .about-copy p.about-lead { font-size: 23px; }
       & .about-copy > p { font-size: 16px; }
-      & .site-footer { gap: 14px; margin-top: 80px; padding-bottom: 104px; }
+      & .site-footer { gap: 14px; margin-top: 80px; padding-bottom: 48px; }
     }
   }
 

@@ -1,4 +1,4 @@
-/* Quiet: one narrow column, small type, and whitespace instead of rules. Lists are single lines of title and date. */
+/* Quiet, the site's design: one narrow column, small type, and whitespace instead of rules. Lists are single lines of title and date. */
 @layer themes {
   :root[data-look='quiet'] { --bg: #fff; --surface: #f4f4f5; --card: #fff; --text: #18181b; --muted: #63636b; --subtle: #71717a; --line: #e9e9eb; --accent: #0f766e; --accent-soft: #e7f3f1; --heading: 'Geist Variable', sans-serif; --sans: 'Geist Variable', -apple-system, BlinkMacSystemFont, sans-serif; --mono: 'Geist Mono Variable', ui-monospace, monospace; --radius: 8px; }
   [data-look='quiet'] body { font-size: 15px; line-height: 1.6; }
@@ -121,14 +121,12 @@
   [data-look='quiet'] .about-aside svg { display: none; }
   [data-look='quiet'] .about-aside > a:hover { color: var(--accent); }
 
-  [data-look='quiet'] .site-footer { justify-content: flex-start; gap: 24px; margin-top: 112px; padding: 0 0 112px; border: 0; }
+  [data-look='quiet'] .site-footer { justify-content: flex-start; gap: 24px; margin-top: 112px; padding: 0 0 64px; border: 0; }
   [data-look='quiet'] .footer-name { font-size: 14px; font-weight: 500; color: var(--muted); }
   [data-look='quiet'] .footer-links { gap: 18px; font-size: 14px; color: var(--subtle); }
   [data-look='quiet'] .footer-links svg { display: none; }
   [data-look='quiet'] .footer-links a:hover { color: var(--text); }
 
-  [data-look='quiet'] .direction-card-copy h2 { font-size: 20px; font-weight: 600; letter-spacing: -.3px; }
-  .direction-quiet .preview-viewport { background: #fff; }
 }
 
 @layer responsive {
@@ -214,7 +212,7 @@
     [data-look='quiet'] .about-copy > p { font-size: 15px; }
     [data-look='quiet'] .about-aside { margin-top: 40px; }
     [data-look='quiet'] .about-aside > a > span { flex-direction: column; gap: 0; }
-    [data-look='quiet'] .site-footer { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 72px; padding-bottom: 104px; }
+    [data-look='quiet'] .site-footer { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 72px; padding-bottom: 48px; }
     [data-look='quiet'] .footer-links { gap: 18px; font-size: 14px; }
   }
 }
