@@ -1,4 +1,4 @@
-# Builds the Astro site and publishes dist/ to GitHub Pages (iondy.com) on every push to main.
+# Builds the Astro site and publishes it to GitHub Pages (iondy.com) on every push to main, or the coming-soon page while COMING_SOON is set.
 name: Deploy to GitHub Pages
 
 on:
@@ -26,10 +26,17 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # While the COMING_SOON repository variable is 'true', publish the placeholder for every path instead of the site.
+      - name: Prepare the coming-soon placeholder
+        if: vars.COMING_SOON == 'true'
+        run: |
+          cp coming-soon/index.html coming-soon/404.html
+          cp public/favicon.svg coming-soon/
+          cp node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2 coming-soon/geist.woff2
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: dist
+          path: ${{ vars.COMING_SOON == 'true' && 'coming-soon' || 'dist' }}
 
   deploy:
     needs: build

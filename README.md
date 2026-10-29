@@ -125,6 +125,17 @@ The importer tests check source preservation, image handling, code whitespace, m
 
 The site is published to GitHub Pages at [iondy.com](https://iondy.com). `.github/workflows/deploy.yml` builds it with Node 24 and deploys `dist/` on every push to `main`; you can also start it by hand from the repository's Actions tab. The custom domain is set in the repository's Pages settings, so the build doesn't need a `CNAME` file.
 
+### Coming-soon placeholder
+
+While the `COMING_SOON` repository variable is `true`, the deploy still builds the site but publishes `coming-soon/index.html` instead, for every path (it doubles as the 404 page). The page is not indexed by search engines. To launch the real site:
+
+```sh
+gh variable set COMING_SOON --body false
+gh workflow run deploy.yml
+```
+
+Set the variable back to `true` and run the workflow again to restore the placeholder.
+
 DNS is managed at GoDaddy. `iondy.com` has A records for GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), and `www` is a CNAME to `sirluk.github.io`, which GitHub redirects to `iondy.com`. A `_github-pages-challenge-sirluk` TXT record verifies the domain for the `sirluk` account.
 
 `.openai/hosting.json` and the ignored `.site-preview/` checkout belong to the earlier private ChatGPT Sites preview and are not used by the GitHub Pages deploy.
