@@ -17,6 +17,7 @@ export function readingTime(post: Post) {
   return Math.max(1, Math.ceil((post.body || '').split(/\s+/).length / 220));
 }
 
+/** Shown on src/pages/_projects.astro, which is offline for now. */
 export const projects = [
   {
     name: 'pytora',

@@ -88,12 +88,12 @@ The seven imported posts retain their original article wording, 32 images, and 5
 ## Site source
 
 - `src/content.config.ts`: validation and discovery of posts.
-- `src/pages/`: homepage, writing archive, article routes, research, projects, about, RSS, and 404 page.
+- `src/pages/`: homepage, writing archive, article routes, research, about, RSS, and 404 page. `_projects.astro` is the projects page, kept offline for now: Astro skips files starting with `_`. Rename it to `projects.astro` and add Projects back to the links in `Base.astro` to publish it; the homepage section it had is in commit `9c9184d`.
 - `src/layouts/Base.astro`: shared navigation, footer, metadata, fonts, and the script that applies the saved AI slop level before the page paints.
 - `src/styles/site.css`: shared base layout and article styles.
 - `src/styles/quiet.css`: the Quiet design.
 - `src/components/SlopSlider.astro`, `src/lib/slop.ts`, and `src/styles/slop.css`: the AI slop slider, its level names, and its five levels.
-- `src/lib/content.ts`: post helpers, project descriptions and links, and the papers list.
+- `src/lib/content.ts`: post helpers, the papers list, and project descriptions for the offline projects page.
 - `public/`: the site's favicon and future static assets.
 
 Quiet uses a light background, restrained typography, and minimal decoration; AI slop is the deliberate exception. Elsewhere, avoid filler taglines, status notes, decorative counters, and unnecessary panels. Project links come from the imported articles. The introductory copy avoids assuming a current job title, affiliation, or research position.

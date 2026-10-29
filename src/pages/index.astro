@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import PostRow from '../components/PostRow.astro';
 import PaperRow from '../components/PaperRow.astro';
 import Icon from '../components/Icon.astro';
-import { getPosts, papers, projects } from '../lib/content';
+import { getPosts, papers } from '../lib/content';
 const posts = await getPosts();
 ---
 <Base>
@@ -23,9 +23,5 @@ const posts = await getPosts();
       <div class="section-heading"><h2>Research</h2><a class="micro-link" href="/research/">All papers <Icon name="arrow" size={16} /></a></div>
       <div class="paper-list">{papers.slice(0, 4).map((paper) => <PaperRow paper={paper} />)}</div>
     </section>
-    <aside class="projects-section">
-      <div class="section-heading"><h2>Projects</h2><a class="section-all" href="/projects/" aria-label="All projects"><Icon name="arrow" size={18} /></a></div>
-      <div class="project-list">{projects.map((project) => <a class="project-card" href={project.url} target="_blank" rel="noreferrer"><h3>{project.name}<Icon name="external" size={14} /></h3><p>{project.description}</p></a>)}</div>
-    </aside>
   </div>
 </Base>
