@@ -1,0 +1,27 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { getPosts, formatDate, readingTime } from '../../lib/content';
+export async function getStaticPaths() {
+  return (await getPosts()).map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const posts = await getPosts();
+const index = posts.findIndex((entry) => entry.id === post.id);
+const next = posts[(index + 1) % posts.length];
+---
+<Base title={`${post.data.title} — iondy`} description={post.data.description} active="writing">
+  <div class="article-layout">
+    <article class="full-article">
+      <a class="back-link" href="/writing/">← Back to the notebook</a>
+      <header class="article-header"><p class="eyebrow">{post.data.category}<span class="eyebrow-divider">/</span><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time><span class="eyebrow-divider">/</span>{readingTime(post)} min read</p><h1>{post.data.title}</h1><p class="article-author">By Lukas Hauzenberger</p><p class="article-description">{post.data.description}</p></header>
+      <div class="prose"><Content /></div>
+      {post.data.original_url && <div class="original-note">First published on Medium on {formatDate(post.data.date)}.<a href={post.data.original_url} target="_blank" rel="noreferrer">View original <Icon name="external" size={14} /></a></div>}
+      <div class="article-tags">{post.data.tags.map((tag) => <span>{tag.replaceAll('-', ' ')}</span>)}</div>
+      {next && <a class="next-article" href={`/writing/${next.id}/`}><span class="micro-label">Continue reading</span><h2>{next.data.title}</h2><Icon name="arrow" size={24} /></a>}
+    </article>
+    {headings.length > 1 && <aside class="article-toc"><span class="micro-label">On this page</span><nav aria-label="Article contents">{headings.filter((heading) => heading.depth === 2).map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav><a class="toc-top" href="#main">Back to top ↑</a></aside>}
+  </div>
+</Base>

@@ -1,0 +1,14 @@
+---
+const groups = [0, 0, 0, 1, 1, 1, 2, 2];
+---
+<div class="attention-diagram" role="img" aria-label="An attention mask with three independent sequences packed into one batch. Each token attends only to earlier tokens in its own sequence.">
+  <div class="diagram-top"><span>Attention mask</span><span>8 × 8</span></div>
+  <div class="matrix-wrap">
+    <span class="matrix-axis">query</span>
+    <div class="attention-matrix" aria-hidden="true">
+      {groups.flatMap((group, row) => groups.map((columnGroup, column) => <span class:list={['matrix-cell', { 'cell-active': column <= row && group === columnGroup }]} data-group={group}></span>))}
+    </div>
+    <span class="matrix-key">key →</span>
+  </div>
+  <div class="diagram-legend"><span><i data-group="0"></i>Sequence A</span><span><i data-group="1"></i>B</span><span><i data-group="2"></i>C</span></div>
+</div>

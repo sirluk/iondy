@@ -1,0 +1,42 @@
+---
+import { slopLevels } from '../lib/directions';
+const max = slopLevels.length - 1;
+---
+<div class="slop-slider" style={`--slop-max: ${max}`}>
+  <label for="slop-range">AI slop</label>
+  <span class="slop-slider-control">
+    <span class="slop-slider-rail" aria-hidden="true">{slopLevels.map((_, i) => <i style={`left: ${(i / max) * 100}%`}></i>)}</span>
+    <input id="slop-range" type="range" min="0" max={max} step="1" value="0" aria-valuetext={slopLevels[0]} />
+  </span>
+  <output for="slop-range" aria-hidden="true">{slopLevels[0]}</output>
+</div>
+<script is:inline>
+  // Match the level the head script picked before this paints, so the thumb doesn't jump once the module script runs.
+  document.getElementById('slop-range').value = document.documentElement.style.getPropertyValue('--slop-level') || '0';
+</script>
+<script>
+  import { slopLevels } from '../lib/directions';
+  const root = document.documentElement;
+  const range = document.querySelector<HTMLInputElement>('#slop-range')!;
+  const output = document.querySelector<HTMLOutputElement>('.slop-slider output')!;
+  function show(level: number) {
+    range.value = String(level);
+    range.setAttribute('aria-valuetext', slopLevels[level]);
+    output.textContent = slopLevels[level];
+  }
+  range.addEventListener('input', () => {
+    const level = Number(range.value);
+    root.dataset.slop = Array.from({ length: level }, (_, i) => i + 1).join(' ');
+    root.style.setProperty('--slop-level', String(level));
+    show(level);
+    if (root.dataset.preview !== 'true') {
+      try { localStorage.setItem('iondy-slop', String(level)); } catch {}
+    }
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('slop')) {
+      url.searchParams.set('slop', String(level));
+      history.replaceState(null, '', url);
+    }
+  });
+  show(Number(root.style.getPropertyValue('--slop-level')) || 0);
+</script>

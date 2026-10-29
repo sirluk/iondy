@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { directions } from '../lib/directions';
+---
+<Base title="Compare designs — iondy" noindex>
+  <header class="page-intro direction-intro"><h1>Compare the designs</h1><p>{directions.length} light designs, using the same articles and projects. Open one to explore the full site.</p></header>
+  <div class="direction-grid">{directions.map((direction, index) => <article class={`direction-card direction-${direction.id}`}><a class="direction-preview" href={`/?look=${direction.id}`} aria-label={`Explore the ${direction.name} direction`}><div class="preview-viewport"><iframe src={`/?look=${direction.id}&preview=1`} title={`${direction.name} homepage preview`} loading="lazy" tabindex="-1"></iframe></div><span class="preview-open">Explore <Icon name="external" size={16} /></span></a><div class="direction-card-copy"><span class="micro-label">{String(index + 1).padStart(2, '0')}</span><h2>{direction.name}</h2><p>{direction.description}</p></div></article>)}</div>
+</Base>
+<script>
+  const previews = document.querySelectorAll<HTMLElement>('.preview-viewport');
+  const observer = new ResizeObserver((entries) => {
+    entries.forEach((entry) => {
+      const frame = entry.target.querySelector('iframe');
+      if (frame) frame.style.transform = `scale(${entry.contentRect.width / 1100})`;
+    });
+  });
+  previews.forEach((preview) => observer.observe(preview));
+</script>

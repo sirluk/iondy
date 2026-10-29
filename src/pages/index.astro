@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import PostRow from '../components/PostRow.astro';
+import Icon from '../components/Icon.astro';
+import { getPosts, projects } from '../lib/content';
+const posts = await getPosts();
+---
+<Base>
+  <section class="home-hero">
+    <div class="hero-copy">
+      <h1>Lukas Hauzenberger</h1>
+      <p class="hero-description">Machine learning research, projects, and notes on what I’m learning.</p>
+    </div>
+  </section>
+  <div class="home-grid">
+    <section id="writing" class="writing-section">
+      <div class="section-heading"><h2>Recent writing</h2><a class="micro-link" href="/writing/">All writing <Icon name="arrow" size={16} /></a></div>
+      <div class="post-list">{posts.slice(0, 4).map((post) => <PostRow post={post} />)}</div>
+      <a class="archive-link" href="/writing/">More from the notebook <Icon name="arrow" size={18} /></a>
+    </section>
+    <aside class="projects-section">
+      <div class="section-heading"><h2>Projects</h2><a class="section-all" href="/projects/" aria-label="All projects"><Icon name="arrow" size={18} /></a></div>
+      <div class="project-list">{projects.map((project) => <a class="project-card" href={project.url} target="_blank" rel="noreferrer"><h3>{project.name}<Icon name="external" size={14} /></h3><p>{project.description}</p></a>)}</div>
+    </aside>
+  </div>
+</Base>

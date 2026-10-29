@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostRow from '../../components/PostRow.astro';
+import Icon from '../../components/Icon.astro';
+import { getPosts } from '../../lib/content';
+const posts = await getPosts();
+const categories = ['All', 'Research', 'Engineering', 'Learning'];
+---
+<Base title="Writing — iondy" active="writing">
+  <header class="page-intro"><h1>Writing</h1><p>Research, implementations, and lessons from the process.</p></header>
+  <div class="archive-tools">
+    <div class="filter-buttons" role="group" aria-label="Filter writing by topic">{categories.map((category) => <button type="button" data-filter={category} aria-pressed={category === 'All'}>{category}<span>{category === 'All' ? posts.length : posts.filter((p) => p.data.category === category).length}</span></button>)}</div>
+    <label class="search-field"><Icon name="search" size={16} /><span class="sr-only">Search writing</span><input type="search" placeholder="Search the notebook" id="writing-search" autocomplete="off" /></label>
+  </div>
+  <div class="archive-posts post-list">{posts.map((post) => <PostRow post={post} searchable />)}</div>
+  <div class="empty-state" hidden><h2>No notes found.</h2><p>Try a different word or explore another topic.</p><button class="text-link" type="button" data-reset-search>Show all writing <Icon name="arrow" size={16} /></button></div>
+  <p class="results-note" aria-live="polite" data-results>{posts.length} entries in the notebook.</p>
+</Base>
+<script>
+  const search = document.querySelector<HTMLInputElement>('#writing-search')!;
+  const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const posts = [...document.querySelectorAll<HTMLElement>('[data-post]')];
+  let category = 'All';
+  function update() {
+    const query = search.value.trim().toLowerCase();
+    let count = 0;
+    posts.forEach((post) => {
+      const visible = (category === 'All' || post.dataset.category === category) && (post.dataset.search || '').includes(query);
+      post.hidden = !visible;
+      if (visible) count++;
+    });
+    filters.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
+    document.querySelector<HTMLElement>('.empty-state')!.hidden = count !== 0;
+    document.querySelector('[data-results]')!.textContent = `${count} ${count === 1 ? 'entry' : 'entries'} ${query || category !== 'All' ? 'found' : 'in the notebook'}.`;
+  }
+  search.addEventListener('input', update);
+  filters.forEach((button) => button.addEventListener('click', () => { category = button.dataset.filter!; update(); }));
+  document.querySelector('[data-reset-search]')?.addEventListener('click', () => { search.value = ''; category = 'All'; update(); search.focus(); });
+</script>

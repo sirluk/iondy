@@ -1,0 +1,491 @@
+[
+  {
+    "title": "Efficient LLM Pretraining: Packed Sequences and Masked Attention",
+    "slug": "efficient-llm-pretraining-packed-sequences-and-masked-attention",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2024-10-07T06:47:26+00:00",
+    "description": "Training large language models (LLMs) is a computationally demanding task. It requires vast amounts of data, powerful hardware, and clever optimization techniques. One such technique which is not often talked about,…",
+    "tags": [],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/efficient-llm-pretraining-packed-sequences-and-masked-attention-351d2a43b719",
+    "medium_id": "351d2a43b719",
+    "import_status": "imported",
+    "image": "images/e43c055c4b6c384c.png",
+    "markdown_path": "../../content/efficient-llm-pretraining-packed-sequences-and-masked-attention/index.md",
+    "original_html_path": "raw/351d2a43b719.html",
+    "html_sha256": "aaec9d19ae60244b9af8856213397f9bc4495cd74899c731781180f5c75c1163",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*HipOUKmwtbPaPdBKXh3BhA.png",
+        "path": "images/e43c055c4b6c384c.png",
+        "alt": "",
+        "sha256": "19738ef381b136fd88a5257dfe168c9e5611ff980dc6006dd1a74a136df58b0f"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*lGU9yZT6RS160f8S6_pO8Q.png",
+        "path": "images/d6960b5ce1fccfe5.png",
+        "alt": "",
+        "sha256": "6c6653b1beef225c4b8c893f3b92f05b56ce6bff823fe3e697c9c9e715a753d5"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*WgII6ur7jqz574lpuENUQQ.png",
+        "path": "images/56378f97b3d06f00.png",
+        "alt": "",
+        "sha256": "e251002517d39a360da8a753e5bc6a92bd5a51a197a9b1899fb0017a4b3a10d1"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/695/1*CZUfureII9RINUI5frbeUA.png",
+        "path": "images/ffaf09b0936d8704.png",
+        "alt": "",
+        "sha256": "b7624d62503849c56ea34c3c2d5d32c837865f1639bf3bc1800edea14876a47b"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/695/1*UEyJGDI_OfqqaurARVAkQQ.png",
+        "path": "images/c8e4d3b615de8a97.png",
+        "alt": "",
+        "sha256": "43584f97e9141dfd908b17727a3aa0e1ffee0388e9d1731cb1d2aafec24c31bc"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/872/1*pcq1PWw3yX7ylf7T6dGH1Q.png",
+        "path": "images/55dcaef2f4a329f2.png",
+        "alt": "",
+        "sha256": "01ab715efa0dd4a815643648218ca9dd3d386850cf6c077573d785c2f7bc2c0d"
+      }
+    ],
+    "code_blocks": 15,
+    "inline_code_blocks": 15,
+    "recovered_embeds": [],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/sirluk/llm_finetuning/blob/main/attention_mask_for_packed_sequence/tutorial.ipynb"
+    ]
+  },
+  {
+    "title": "Introducing pytora — a minimal PyTorch implementation of LoRA",
+    "slug": "introducing-pytora-a-minimal-pytorch-implementation-of-lora",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2024-05-26T06:01:33+00:00",
+    "description": "TLDR - here is the code: https://github.com/sirluk/pytora",
+    "tags": [
+      "fine-tuning",
+      "transformers",
+      "machine-learning",
+      "llm"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/introducing-pytora-a-minimal-pytorch-implementation-of-lora-b4ea527b6ac0",
+    "medium_id": "b4ea527b6ac0",
+    "import_status": "imported",
+    "image": "images/5a9cf5ed3482dbdb.png",
+    "markdown_path": "../../content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/index.md",
+    "original_html_path": "raw/b4ea527b6ac0.html",
+    "html_sha256": "6de35c1c88129c2b5fbf834eaf18660b5b6d346e20f82be5af7dc71da6b4d49e",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*DQ_42Lyf8jqzcVmj_x-U6w.png",
+        "path": "images/5a9cf5ed3482dbdb.png",
+        "alt": "",
+        "sha256": "b0c87fc4f5a26c44dd34cff6fc55b657c1ecbc8af7107809b2b5845aabd1ec2e"
+      }
+    ],
+    "code_blocks": 2,
+    "inline_code_blocks": 2,
+    "recovered_embeds": [],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/sirluk/pytora"
+    ]
+  },
+  {
+    "title": "Multilabel Classification using Mistral-7B on a single GPU with quantization and LoRA",
+    "slug": "multilabel-classification-using-mistral-7b-on-a-single-gpu-with-quantization-and-lora",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2024-01-16T12:17:07+00:00",
+    "description": "LLMs have impressed with there abilities to solve a wide variety of tasks, not only for natural language but also in a multimodal setting. Due to their size (“smaller” LLMs still have > 1 billion parameters) and…",
+    "tags": [
+      "naturallanguageprocessing",
+      "machine-learning",
+      "finetune-llm",
+      "large-language-models"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/multilabel-classification-using-mistral-7b-on-a-single-gpu-with-quantization-and-lora-8f848b5237f3",
+    "medium_id": "8f848b5237f3",
+    "import_status": "imported",
+    "image": "images/c6f4b42a6d7f1af4.png",
+    "markdown_path": "../../content/multilabel-classification-using-mistral-7b-on-a-single-gpu-with-quantization-and-lora/index.md",
+    "original_html_path": "raw/8f848b5237f3.html",
+    "html_sha256": "e65597b80136869916be6d1f6e15943217134f1e7eb646d7ac204d0e19fa3b55",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*s46gqAWQV55NinmvdSvO2w.png",
+        "path": "images/c6f4b42a6d7f1af4.png",
+        "alt": "",
+        "sha256": "f83c3abc516587b2a1849292d44107da3f686cd35aa9e38eddb82a3d732547c4"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/640/1*rlI77WGneyJ5Wvyk5TDIvA.png",
+        "path": "images/2c19187f464df0d7.png",
+        "alt": "",
+        "sha256": "69cb4b85e464c29704880b27bfee3e1332e76169efed231a3cc7d68ab9cba11b"
+      }
+    ],
+    "code_blocks": 7,
+    "inline_code_blocks": 7,
+    "recovered_embeds": [],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/sirluk/llm_finetuning/tree/main/llm_multilabel_clf"
+    ]
+  },
+  {
+    "title": "What I learned doing Data Science Interviews in the 2020s",
+    "slug": "what-i-learned-doing-data-science-interviews-in-the-2020s",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2023-12-18T08:26:41+00:00",
+    "description": "Few disciplines have experienced hype periods comparable to that of Data Science (DS) and Machine Learning (ML) since approximately 2016. The demand for new data scientists has soared paralleled by the continuous…",
+    "tags": [
+      "interview-preparation",
+      "data-science",
+      "cv",
+      "interview-questions"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/what-i-learned-doing-data-science-interviews-in-the-2020s-219c9517cffa",
+    "medium_id": "219c9517cffa",
+    "import_status": "imported",
+    "image": "images/7dec99dc8b377fd1.jpeg",
+    "markdown_path": "../../content/what-i-learned-doing-data-science-interviews-in-the-2020s/index.md",
+    "original_html_path": "raw/219c9517cffa.html",
+    "html_sha256": "030e264a84710b9e552202f3f927cdcf40f432780bf2a4d66bc8a7a930bf77e4",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*IvixF173K1KE1Bn1CWfv0w.jpeg",
+        "path": "images/7dec99dc8b377fd1.jpeg",
+        "alt": "",
+        "sha256": "8748e9ecb41a2a7f72e64001e555b37f72dfd420470c9672f51e4d786d8a28a5"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*0NdvQH62x8GV-9li0g6Nrg.png",
+        "path": "images/6913c1c4544d6d04.png",
+        "alt": "",
+        "sha256": "b89d45c6b9a388039c879621ff8da25786da14448f6158132380b1fd5574479b"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*PQ3OFZR0t_2cCcMbVRVxqg.png",
+        "path": "images/8c205a5c699bca8f.png",
+        "alt": "",
+        "sha256": "59d6fa3b6ebb59ca7eaceaa2b72ce2c9a3f763e05930adffeaaab7673a66cc9d"
+      }
+    ],
+    "code_blocks": 0,
+    "inline_code_blocks": 0,
+    "recovered_embeds": [],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": []
+  },
+  {
+    "title": "Training and serving PyTorch models in the Google Cloud with Vertex AI pipelines",
+    "slug": "training-and-serving-pytorch-models-in-the-google-cloud-with-vertex-ai-pipelines",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2023-04-07T18:43:33+00:00",
+    "description": "With each new feature Vertex AI is making it easier to put Machine Learning (ML) prototypes into production. Nowadays you do not really need to be a ML Ops expert anymore to develop production grade pipelines in the…",
+    "tags": [
+      "google-cloud-platform",
+      "mlops",
+      "vertex-ai",
+      "machine-learning",
+      "pytorch"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/training-and-serving-pytorch-models-in-the-google-cloud-with-vertex-ai-pipelines-dedf21dc4e35",
+    "medium_id": "dedf21dc4e35",
+    "import_status": "imported",
+    "image": "images/5567e20f068bca5c.png",
+    "markdown_path": "../../content/training-and-serving-pytorch-models-in-the-google-cloud-with-vertex-ai-pipelines/index.md",
+    "original_html_path": "raw/dedf21dc4e35.html",
+    "html_sha256": "26421b858791359167c05244a205fad8e860c4c6a2fac016595335f2584578db",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/379/1*RgV_ea00CrVL3RtnygnRug.png",
+        "path": "images/5567e20f068bca5c.png",
+        "alt": "",
+        "sha256": "e371af073a6905be0fa382eedd138274b3878d1a5f267b2726afa29cc12c53c0"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*XJE38q7Nxhlwoms1tDq4zA.png",
+        "path": "images/23ea64081d799216.png",
+        "alt": "",
+        "sha256": "968d132156372947035065b613035b0fe675d5ee769f965c0580cfde630559d9"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/431/1*6-vkJfApoZ7CoMUI3_7eQw.png",
+        "path": "images/4544e0b3f06da4ae.png",
+        "alt": "",
+        "sha256": "84b7bd26d582a2d94e93978f2ac08ace0ccde949b435e39a5093f9e6652c414e"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/194/1*Rrx-ngCS3a4mz2PcglSATw.png",
+        "path": "images/dfdb3b91f76b29b5.png",
+        "alt": "",
+        "sha256": "b7811b1391550c1f6e5d4d8d06edd0070bb0537686b20fdf53780fdee1c5bd93"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*uOXn8PkklZkt1fhVgfeDhQ.png",
+        "path": "images/acf5684cd2d768ed.png",
+        "alt": "",
+        "sha256": "9a7aaccd3d4c251629088d26d2cb9b356c7a3e9924dfe403b16116ca26af2362"
+      }
+    ],
+    "code_blocks": 15,
+    "inline_code_blocks": 15,
+    "recovered_embeds": [],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/sirluk/vertex_ai_pytorch",
+      "https://github.com/pytorch/serve"
+    ]
+  },
+  {
+    "title": "Adverserial Training",
+    "slug": "adverserial-training",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2022-08-22T18:32:20+00:00",
+    "description": "Large language models following the transformer architecture have been incredibly successful since their introduction by Vaswani et. al. in 2018. They have given rise to large pre-trained models such as BERT (Devlin…",
+    "tags": [
+      "bert",
+      "artificial-intelligence",
+      "nlp",
+      "fairness",
+      "machine-learning"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/adverserial-training-5bb5ea919ae7",
+    "medium_id": "5bb5ea919ae7",
+    "import_status": "imported",
+    "image": "images/3f9ab07c08b4548b.png",
+    "markdown_path": "../../content/adverserial-training/index.md",
+    "original_html_path": "raw/5bb5ea919ae7.html",
+    "html_sha256": "b261fe23d194a2b980fd33c240a7279a334c8c2c98be65984c3d60a76a1e7e72",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/166/1*cC42E_aqsfrfKUMxPMVbQw.png",
+        "path": "images/3f9ab07c08b4548b.png",
+        "alt": "",
+        "sha256": "0f13428e404c43e5a51d7a6966e2c7ec511c39fe31e226cd107d43850d74d8c5"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*loajNMdVFxo8d-smMG3AIw.png",
+        "path": "images/79c6a91d9461c0f0.png",
+        "alt": "",
+        "sha256": "f1b5f9784da8412fb75de9f7c2b857f35b40d72c7252c81a8ee0fd2b45cf0117"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*rvvpXCmh_sdnVkdYTGVNoA.png",
+        "path": "images/722a5206ca075aa8.png",
+        "alt": "",
+        "sha256": "262c9a0e21f08041fc9c5f76bbce18093d830b33c207fa5b24e2b5541ad6ba53"
+      }
+    ],
+    "code_blocks": 5,
+    "inline_code_blocks": 0,
+    "recovered_embeds": [
+      {
+        "filename": "GRL.py",
+        "medium_embed_url": "https://medium.com/media/feea7e8b06f829d938187034b8d1b876",
+        "raw_url": "https://gist.github.com/sirluk/4805fe118224ab2f1184f04fb55f4764/raw/c16fbf107efc345a74fefed8b937ef0efc409ef0/GRL.py",
+        "raw_path": "raw/embeds/5bb5ea919ae7/GRL.py",
+        "sha256": "4114602381a79ee9e5ece46febda8b730aca9b1369c840a981e46afb7c89a4fa"
+      },
+      {
+        "filename": "adv_head_init.py",
+        "medium_embed_url": "https://medium.com/media/c10a0349b3c35f66f647e6692d51333f",
+        "raw_url": "https://gist.github.com/sirluk/92355998b03d630ae204f69faa9b52c7/raw/80ed51e523d523f76de1f5c9c618ed12cb7fdf8e/adv_head_init.py",
+        "raw_path": "raw/embeds/5bb5ea919ae7/adv_head_init.py",
+        "sha256": "9c8ebcc63d34ffa3a07edf0c8331aab8ff10d381c64766ed136610033262464a"
+      },
+      {
+        "filename": "adv_head.py",
+        "medium_embed_url": "https://medium.com/media/8d0ada013aa41d94a18ab50a1f9fbbd8",
+        "raw_url": "https://gist.github.com/sirluk/42fdd0ea831f490b647f762f9a2b299b/raw/81576103d720ee18a37c3bd4dc68e3ae7527b101/adv_head.py",
+        "raw_path": "raw/embeds/5bb5ea919ae7/adv_head.py",
+        "sha256": "1d314c9d809ff0f33143db0a30995c6574c5aebca265bcfeaf3474fb8dad71a8"
+      },
+      {
+        "filename": "adv_step.py",
+        "medium_embed_url": "https://medium.com/media/94ef936d814f989fa6f942fa6752bfc1",
+        "raw_url": "https://gist.github.com/sirluk/854710b755b8b4f913df4ac4075e6c03/raw/6e7006cbcd7eba89a78c9e259bef63dc97558d81/adv_step.py",
+        "raw_path": "raw/embeds/5bb5ea919ae7/adv_step.py",
+        "sha256": "413ea4035e73a451c2972e6e60ef17b006923d3822ab44dc5735484cf6d42e96"
+      },
+      {
+        "filename": "get_mean_loss.py",
+        "medium_embed_url": "https://medium.com/media/a80e6482778cf750aff2db9450a87816",
+        "raw_url": "https://gist.github.com/sirluk/268d059340e8b4d154587b78f22e251d/raw/345ade4c4df89b57086845eddf7528334169b62a/get_mean_loss.py",
+        "raw_path": "raw/embeds/5bb5ea919ae7/get_mean_loss.py",
+        "sha256": "f5fbf58ade56d396dafa48edbf69d235e4eeb064d78456dd90729949b7c9f29a"
+      }
+    ],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/sirluk/adverserial_training",
+      "https://github.com/sirluk/adverserial_training/blob/main/README.md",
+      "https://github.com/sirluk/adverserial_training/blob/main/src/models/model_heads.py",
+      "https://github.com/sirluk/adverserial_training/blob/main/src/models/model_adv.py"
+    ]
+  },
+  {
+    "title": "An practical introduction to Diff-Pruning for BERT",
+    "slug": "an-practical-introduction-to-diff-pruning-for-bert",
+    "author": "Lukas Hauzenberger",
+    "published_at": "2022-02-23T10:53:37+00:00",
+    "description": "In this article I would like to give a short introduction for an elegant technique to make finetuning of large language models more storage efficient. From my own experience it is often the case that one has several…",
+    "tags": [
+      "bert",
+      "diff-pruning",
+      "transformers",
+      "l0-regularization",
+      "pytorch"
+    ],
+    "source": "medium",
+    "original_url": "https://medium.com/@lukas.hauzenberger/an-practical-introduction-to-diff-pruning-for-bert-4278ee4be750",
+    "medium_id": "4278ee4be750",
+    "import_status": "imported",
+    "image": "images/61476ced0a702005.png",
+    "markdown_path": "../../content/an-practical-introduction-to-diff-pruning-for-bert/index.md",
+    "original_html_path": "raw/4278ee4be750.html",
+    "html_sha256": "be6cfee2f1abb1812e7d64898c292ba1455ef40450577b9d4204d397c12b6885",
+    "images": [
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/137/1*fDptKmWRGOtEVn8VuhWaJQ.png",
+        "path": "images/61476ced0a702005.png",
+        "alt": "",
+        "sha256": "6be83fd86994f1a39605ac0e9eb583d22b0abb180068bfc2ff445d17504a4d66"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/93/1*gyyDG6Wb0c02lqtHLma2zw.png",
+        "path": "images/5112d9defea16319.png",
+        "alt": "",
+        "sha256": "fc33d14ecee232b9879e10d46a3cab1fcafc31e21802975ec799cb340ad3ff16"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/237/1*xOuNtmBI4W7PEpegl87djQ.png",
+        "path": "images/c664961a505479e5.png",
+        "alt": "",
+        "sha256": "bb46528e02c0609bfb04d2b21a9a736a241b9f94787772a80f6308039a118fca"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/558/1*R2vOibAJ1j1Csf9Zw1-ZBQ.png",
+        "path": "images/611d60706300a007.png",
+        "alt": "",
+        "sha256": "6cca67fc531790a45f6f6f595c237e40c2c7c86e202ad57d652784c95ebf110b"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/126/1*UsJYy1KPPwEJECWmsOx4TA.png",
+        "path": "images/d6dc8eeb39458f5b.png",
+        "alt": "",
+        "sha256": "78deb321d048f8c83803e3361f221bde10a021964757e2ff03cab3c2090d046a"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/332/1*plj5jYjkVr_Bx6ro5upUxA.png",
+        "path": "images/291fafd7e81d56ef.png",
+        "alt": "",
+        "sha256": "f67a24173f90082ffe80774fff66f1e0ac9c3f04f9bbe7a05ee44c31d842c185"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/412/1*tgA-BTv9FNgOsz32HlyA5g.png",
+        "path": "images/f53c1776e66ffc6b.png",
+        "alt": "",
+        "sha256": "a82758c7bb2014c812b8e4bacdf4600a8f324ca41260e09d2b1357a9e5de0c84"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/864/1*j_w1gf31nxMUrn9G_jEnzg.jpeg",
+        "path": "images/6a2c9d756a7b039f.jpeg",
+        "alt": "",
+        "sha256": "0a5d68af349e5b86c7efc2f434b0a0205c52ff32358202560ade384abff75c7c"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/402/1*_l7cQY32IamDcne0iEoDRg.png",
+        "path": "images/e5f830f7400e7ea8.png",
+        "alt": "",
+        "sha256": "bf5cb372db37243844e03f84bd1703277586cab47490deb75a7fba086b726808"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/187/1*vl32aiMEPrdFlQzndGZTag.png",
+        "path": "images/5394eba913e20ed5.png",
+        "alt": "",
+        "sha256": "757e206ecb595c1a2f83763e5c143da1b64012403fcf9e1ea0f47cfb12e725e8"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/403/1*5X_HuKpYPgVkL2-ECTNkyg.png",
+        "path": "images/46cc9a256dceb21f.png",
+        "alt": "",
+        "sha256": "e79db65909f7268c3ed048608ac9a394bdc8bc1e4c9c4ba50fbb75848e208849"
+      },
+      {
+        "source_url": "https://cdn-images-1.medium.com/max/1024/1*n1Jw__B1NRWXlEpQfg1gVw.png",
+        "path": "images/7a9a0f366bfb3fb9.png",
+        "alt": "",
+        "sha256": "092ea1d37cae09ecb5a253939f793a771a51211462e8a9a07f96585079248b5a"
+      }
+    ],
+    "code_blocks": 6,
+    "inline_code_blocks": 0,
+    "recovered_embeds": [
+      {
+        "filename": "diff_weight.py",
+        "medium_embed_url": "https://medium.com/media/1af9f4f7b759a6ba227591b497847eb8",
+        "raw_url": "https://gist.github.com/sirluk/c564323969fa0f3324dcdc3e75b9b48d/raw/edd8e48e6205d6bfd474eeeeda0f9b5e83cc20aa/diff_weight.py",
+        "raw_path": "raw/embeds/4278ee4be750/diff_weight.py",
+        "sha256": "a32113d6fe92b12f87685ca52e47f6035f96d73a8f9065acf5004252e6d9b05e"
+      },
+      {
+        "filename": "register_parametrization.py",
+        "medium_embed_url": "https://medium.com/media/71699da548609670c9758540968d48a0",
+        "raw_url": "https://gist.github.com/sirluk/950c4e158aeb4c56168f0dca7f02d9f8/raw/d9e9e17530cd5f3e607f0fff867c7deeb2e34b95/register_parametrization.py",
+        "raw_path": "raw/embeds/4278ee4be750/register_parametrization.py",
+        "sha256": "c4660b972d0fd84cfcae1d0b9611ff00f22f83d8e73b89b5a539b81086715666"
+      },
+      {
+        "filename": "l0_pen.py",
+        "medium_embed_url": "https://medium.com/media/308744566e1e6a98cd854c3e98c65e00",
+        "raw_url": "https://gist.github.com/sirluk/e0ff234a08f63dd7ef1b07efde235682/raw/c883b60fb1b93958835a2343bc9fc17622a5c6b0/l0_pen.py",
+        "raw_path": "raw/embeds/4278ee4be750/l0_pen.py",
+        "sha256": "ce08c067a41624e12191f76544b7887212a2a3e18e81f8c8d927eea1ba557055"
+      },
+      {
+        "filename": "l0_pen_method.py",
+        "medium_embed_url": "https://medium.com/media/1f157d568f8429ba87928abf7fb202d1",
+        "raw_url": "https://gist.github.com/sirluk/0e867d745b1185d125c4757d7e1c9148/raw/6f75d460dfc74d5260c772b39ecdfa9b15e0ad52/l0_pen_method.py",
+        "raw_path": "raw/embeds/4278ee4be750/l0_pen_method.py",
+        "sha256": "27fb110f37debc19699d86ae0acbe923605ad14fa468c1624df4623937e3c0e4"
+      },
+      {
+        "filename": "diff_weight_fixmask.py",
+        "medium_embed_url": "https://medium.com/media/de849b2abb4e824790d4c7f917b7ec6a",
+        "raw_url": "https://gist.github.com/sirluk/61d9d25a4d2ea3cfe9956ffb1300d21c/raw/fe152b9a95a56c07dcc44d6762879f8b46ec5ecd/diff_weight_fixmask.py",
+        "raw_path": "raw/embeds/4278ee4be750/diff_weight_fixmask.py",
+        "sha256": "e88d76c060a6c1e65df9e5f5c2a390e1a369259a83a05518b0542ec22a9da252"
+      },
+      {
+        "filename": "magnitude_pruning.py",
+        "medium_embed_url": "https://medium.com/media/a30bd30f8738c293f3fcbdd3aba90f42",
+        "raw_url": "https://gist.github.com/sirluk/70f8a1c3a607e7f5d12182add251c8b5/raw/b9f2483f1398369324a85037a58e0f7108991164/magnitude_pruning.py",
+        "raw_path": "raw/embeds/4278ee4be750/magnitude_pruning.py",
+        "sha256": "03a3f77966fcaf3cdfec9ad687b14ed0fe2c7fb740add1ba42e9bd4de26d23f0"
+      }
+    ],
+    "removed_tracking_pixels": 1,
+    "warnings": [],
+    "project_links": [
+      "https://github.com/dguo98/DiffPruning",
+      "https://github.com/sirluk/diff_pruning"
+    ]
+  }
+]

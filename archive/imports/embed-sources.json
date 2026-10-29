@@ -1,0 +1,67 @@
+{
+  "5bb5ea919ae7": {
+    "html_sha256": "b261fe23d194a2b980fd33c240a7279a334c8c2c98be65984c3d60a76a1e7e72",
+    "embeds": [
+      {
+        "filename": "GRL.py",
+        "medium_embed_url": "https://medium.com/media/feea7e8b06f829d938187034b8d1b876",
+        "raw_url": "https://gist.github.com/sirluk/4805fe118224ab2f1184f04fb55f4764/raw/c16fbf107efc345a74fefed8b937ef0efc409ef0/GRL.py"
+      },
+      {
+        "filename": "adv_head_init.py",
+        "medium_embed_url": "https://medium.com/media/c10a0349b3c35f66f647e6692d51333f",
+        "raw_url": "https://gist.github.com/sirluk/92355998b03d630ae204f69faa9b52c7/raw/80ed51e523d523f76de1f5c9c618ed12cb7fdf8e/adv_head_init.py"
+      },
+      {
+        "filename": "adv_head.py",
+        "medium_embed_url": "https://medium.com/media/8d0ada013aa41d94a18ab50a1f9fbbd8",
+        "raw_url": "https://gist.github.com/sirluk/42fdd0ea831f490b647f762f9a2b299b/raw/81576103d720ee18a37c3bd4dc68e3ae7527b101/adv_head.py"
+      },
+      {
+        "filename": "adv_step.py",
+        "medium_embed_url": "https://medium.com/media/94ef936d814f989fa6f942fa6752bfc1",
+        "raw_url": "https://gist.github.com/sirluk/854710b755b8b4f913df4ac4075e6c03/raw/6e7006cbcd7eba89a78c9e259bef63dc97558d81/adv_step.py"
+      },
+      {
+        "filename": "get_mean_loss.py",
+        "medium_embed_url": "https://medium.com/media/a80e6482778cf750aff2db9450a87816",
+        "raw_url": "https://gist.github.com/sirluk/268d059340e8b4d154587b78f22e251d/raw/345ade4c4df89b57086845eddf7528334169b62a/get_mean_loss.py"
+      }
+    ]
+  },
+  "4278ee4be750": {
+    "html_sha256": "be6cfee2f1abb1812e7d64898c292ba1455ef40450577b9d4204d397c12b6885",
+    "embeds": [
+      {
+        "filename": "diff_weight.py",
+        "medium_embed_url": "https://medium.com/media/1af9f4f7b759a6ba227591b497847eb8",
+        "raw_url": "https://gist.github.com/sirluk/c564323969fa0f3324dcdc3e75b9b48d/raw/edd8e48e6205d6bfd474eeeeda0f9b5e83cc20aa/diff_weight.py"
+      },
+      {
+        "filename": "register_parametrization.py",
+        "medium_embed_url": "https://medium.com/media/71699da548609670c9758540968d48a0",
+        "raw_url": "https://gist.github.com/sirluk/950c4e158aeb4c56168f0dca7f02d9f8/raw/d9e9e17530cd5f3e607f0fff867c7deeb2e34b95/register_parametrization.py"
+      },
+      {
+        "filename": "l0_pen.py",
+        "medium_embed_url": "https://medium.com/media/308744566e1e6a98cd854c3e98c65e00",
+        "raw_url": "https://gist.github.com/sirluk/e0ff234a08f63dd7ef1b07efde235682/raw/c883b60fb1b93958835a2343bc9fc17622a5c6b0/l0_pen.py"
+      },
+      {
+        "filename": "l0_pen_method.py",
+        "medium_embed_url": "https://medium.com/media/1f157d568f8429ba87928abf7fb202d1",
+        "raw_url": "https://gist.github.com/sirluk/0e867d745b1185d125c4757d7e1c9148/raw/6f75d460dfc74d5260c772b39ecdfa9b15e0ad52/l0_pen_method.py"
+      },
+      {
+        "filename": "diff_weight_fixmask.py",
+        "medium_embed_url": "https://medium.com/media/de849b2abb4e824790d4c7f917b7ec6a",
+        "raw_url": "https://gist.github.com/sirluk/61d9d25a4d2ea3cfe9956ffb1300d21c/raw/fe152b9a95a56c07dcc44d6762879f8b46ec5ecd/diff_weight_fixmask.py"
+      },
+      {
+        "filename": "magnitude_pruning.py",
+        "medium_embed_url": "https://medium.com/media/a30bd30f8738c293f3fcbdd3aba90f42",
+        "raw_url": "https://gist.github.com/sirluk/70f8a1c3a607e7f5d12182add251c8b5/raw/b9f2483f1398369324a85037a58e0f7108991164/magnitude_pruning.py"
+      }
+    ]
+  }
+}

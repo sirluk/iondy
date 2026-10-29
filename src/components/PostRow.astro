@@ -1,0 +1,11 @@
+---
+import { formatDate, readingTime, type Post } from '../lib/content';
+import Icon from './Icon.astro';
+interface Props { post: Post; searchable?: boolean; }
+const { post, searchable = false } = Astro.props;
+const search = `${post.data.title} ${post.data.description} ${post.data.category} ${post.data.tags.join(' ')}`.toLowerCase();
+---
+<article class="post-row" data-post={searchable ? '' : undefined} data-search={searchable ? search : undefined} data-category={post.data.category}>
+  <div class="post-meta"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, true)}</time><span class="post-category">{post.data.category}</span></div>
+  <div class="post-summary"><a class="post-title-link" href={`/writing/${post.id}/`}><h3>{post.data.title}</h3><Icon name="external" size={20} /></a><p>{post.data.description}</p><span class="post-reading-time">{readingTime(post)} min read</span></div>
+</article>

@@ -1,0 +1,94 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/newsreader';
+import '@fontsource-variable/jetbrains-mono';
+import '@fontsource-variable/ibm-plex-sans';
+import '@fontsource-variable/ibm-plex-sans/wght-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist/wght-italic.css';
+import '@fontsource-variable/geist-mono';
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '../styles/site.css';
+import '../styles/looks/index.css';
+import '../styles/looks/paper.css';
+import '../styles/looks/margin.css';
+import '../styles/looks/quiet.css';
+import '../styles/looks/folio.css';
+import '../styles/slop.css';
+import DesignSwitcher from '../components/DesignSwitcher.astro';
+import SlopSlider from '../components/SlopSlider.astro';
+import Icon from '../components/Icon.astro';
+import { defaultLook, directions, slopLevels } from '../lib/directions';
+interface Props { title?: string; description?: string; active?: string; noindex?: boolean; }
+const { title = 'Lukas Hauzenberger — iondy', description = 'Projects, research, and things learned along the way. A personal notebook by Lukas Hauzenberger.', active = '', noindex = false } = Astro.props;
+const links = [{ label: 'Writing', href: '/writing/' }, { label: 'Projects', href: '/projects/' }, { label: 'About', href: '/about/' }];
+---
+<!doctype html>
+<html lang="en" data-look={defaultLook}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="iondy — Writing" href="/rss.xml" />
+    <script define:vars={{ directionIds: directions.map((direction) => direction.id), defaultLook, slopMax: slopLevels.length - 1 }}>
+      (() => {
+        const params = new URLSearchParams(location.search);
+        const preview = params.get('preview') === '1';
+        let stored = '';
+        let storedSlop = '';
+        try {
+          stored = localStorage.getItem('iondy-look') || '';
+          storedSlop = localStorage.getItem('iondy-slop') || '';
+        } catch {}
+        const requested = params.get('look') || stored || defaultLook;
+        const look = requested === 'afterhours' ? 'paper' : requested;
+        const selected = directionIds.includes(look) ? look : defaultLook;
+        document.documentElement.dataset.look = selected;
+        // data-slop lists every level up to the chosen one ("1 2 3"), so CSS can match "level 2 or more" with [data-slop~='2'].
+        const slopParam = params.get('slop');
+        const slop = Math.min(slopMax, Math.max(0, Number.parseInt(slopParam ?? (preview ? '' : storedSlop), 10) || 0));
+        document.documentElement.dataset.slop = Array.from({ length: slop }, (_, i) => i + 1).join(' ');
+        document.documentElement.style.setProperty('--slop-level', String(slop));
+        document.documentElement.dataset.preview = String(preview);
+        document.documentElement.style.colorScheme = 'light';
+        if (!preview && params.has('look')) {
+          try { localStorage.setItem('iondy-look', selected); } catch {}
+        }
+        if (!preview && slopParam !== null) {
+          try { localStorage.setItem('iondy-slop', String(slop)); } catch {}
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="/" aria-label="iondy home">iondy<span class="wordmark-dot" aria-hidden="true"></span><span class="wordmark-slash" aria-hidden="true">/</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          {links.map((link) => <a href={link.href} aria-current={active === link.label.toLowerCase() ? 'page' : undefined}>{link.label}</a>)}
+        </nav>
+        <SlopSlider />
+        <a class="header-github quiet-link" href="https://github.com/sirluk" target="_blank" rel="noreferrer">GitHub <Icon name="external" size={15} /></a>
+      </header>
+      <div class="site-main">
+        <main id="main" tabindex="-1"><slot /></main>
+        <footer class="site-footer">
+          <a href="/" class="footer-name">Lukas Hauzenberger</a>
+          <div class="footer-links"><a href="https://github.com/sirluk" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://medium.com/@lukas.hauzenberger" target="_blank" rel="noreferrer">Medium ↗</a><a href="/rss.xml">RSS <Icon name="rss" size={13} /></a></div>
+        </footer>
+      </div>
+    </div>
+    <DesignSwitcher />
+  </body>
+</html>
