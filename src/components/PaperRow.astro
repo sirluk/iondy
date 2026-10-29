@@ -1,0 +1,12 @@
+---
+import type { Paper } from '../lib/content';
+interface Props { paper: Paper; heading?: 'h2' | 'h3'; }
+const { paper, heading: Heading = 'h3' } = Astro.props;
+---
+<article class="paper-row">
+  <a class="paper-title" href={paper.links[0].url} target="_blank" rel="noreferrer"><Heading>{paper.title}</Heading></a>
+  {paper.authors && <p class="paper-authors">{paper.authors.map((author, i) => <Fragment>{i > 0 && ', '}{author === 'Lukas Hauzenberger' ? <strong>{author}</strong> : author}</Fragment>)}</p>}
+  <p class="paper-venue">{paper.venue} {paper.year}{paper.note && <span class="paper-note"> · {paper.note}</span>}</p>
+  <p class="paper-summary">{paper.summary}</p>
+  <div class="paper-links">{paper.links.map((link) => <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}</div>
+</article>

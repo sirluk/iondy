@@ -170,8 +170,6 @@
   .prose pre, .prose pre span { color: var(--shiki-light, var(--text)); }
   .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 13px; }
   .prose td, .prose th { border-bottom: 1px solid var(--line); padding: 12px; text-align: left; }
-  .original-note { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; font-size: 10px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 50px; padding-top: 25px; }
-  .original-note a { display: inline-flex; align-items: center; gap: 5px; color: var(--accent); }
   .article-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
   .article-tags > span { font: 8px var(--mono); padding: 6px 9px; background: var(--surface); color: var(--muted); border-radius: 3px; }
   .next-article { position: relative; display: block; padding: 28px; padding-right: 65px; background: var(--surface); border: 1px solid var(--line); margin-top: 45px; border-radius: var(--radius); }

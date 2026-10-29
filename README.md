@@ -77,19 +77,23 @@ The article starts here.
 ![A useful image](images/example.png)
 ```
 
-The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, and `Learning`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and retains the source link for imported writing. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
+The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, and `Learning`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
+
+### Papers
+
+Publications live in `papers` in `src/lib/content.ts`, in the order of the CV. `/research/` lists all of them with authors, venue, a one-line summary, and links; the homepage shows the first four. The first link of each paper is where its title points, so put arXiv first when there is an arXiv version. `authors` is optional, for papers whose author list isn't public yet.
 
 The seven imported posts retain their original article wording, 32 images, and 50 code blocks. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written.
 
 ## Site source
 
 - `src/content.config.ts`: validation and discovery of posts.
-- `src/pages/`: homepage, writing archive, article routes, projects, about, RSS, and 404 page.
+- `src/pages/`: homepage, writing archive, article routes, research, projects, about, RSS, and 404 page.
 - `src/layouts/Base.astro`: shared navigation, footer, metadata, fonts, and the script that applies the saved AI slop level before the page paints.
 - `src/styles/site.css`: shared base layout and article styles.
 - `src/styles/quiet.css`: the Quiet design.
 - `src/components/SlopSlider.astro`, `src/lib/slop.ts`, and `src/styles/slop.css`: the AI slop slider, its level names, and its five levels.
-- `src/lib/content.ts`: post helpers and project descriptions/links.
+- `src/lib/content.ts`: post helpers, project descriptions and links, and the papers list.
 - `public/`: the site's favicon and future static assets.
 
 Quiet uses a light background, restrained typography, and minimal decoration; AI slop is the deliberate exception. Elsewhere, avoid filler taglines, status notes, decorative counters, and unnecessary panels. Project links come from the imported articles. The introductory copy avoids assuming a current job title, affiliation, or research position.

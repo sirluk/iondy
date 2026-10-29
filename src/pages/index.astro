@@ -1,8 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostRow from '../components/PostRow.astro';
+import PaperRow from '../components/PaperRow.astro';
 import Icon from '../components/Icon.astro';
-import { getPosts, projects } from '../lib/content';
+import { getPosts, papers, projects } from '../lib/content';
 const posts = await getPosts();
 ---
 <Base>
@@ -17,6 +18,10 @@ const posts = await getPosts();
       <div class="section-heading"><h2>Recent writing</h2><a class="micro-link" href="/writing/">All writing <Icon name="arrow" size={16} /></a></div>
       <div class="post-list">{posts.slice(0, 4).map((post) => <PostRow post={post} />)}</div>
       <a class="archive-link" href="/writing/">More from the notebook <Icon name="arrow" size={18} /></a>
+    </section>
+    <section id="research" class="research-section">
+      <div class="section-heading"><h2>Research</h2><a class="micro-link" href="/research/">All papers <Icon name="arrow" size={16} /></a></div>
+      <div class="paper-list">{papers.slice(0, 4).map((paper) => <PaperRow paper={paper} />)}</div>
     </section>
     <aside class="projects-section">
       <div class="section-heading"><h2>Projects</h2><a class="section-all" href="/projects/" aria-label="All projects"><Icon name="arrow" size={18} /></a></div>

@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import PaperRow from '../components/PaperRow.astro';
+import Icon from '../components/Icon.astro';
+import { papers, scholarUrl } from '../lib/content';
+---
+<Base title="Research — iondy" description="Papers by Lukas Hauzenberger on efficient language models, parameter-efficient fine-tuning, and bias mitigation." active="research">
+  <header class="page-intro"><h1>Research</h1><p>Papers on efficient language models, parameter-efficient fine-tuning, and bias mitigation.</p></header>
+  <div class="paper-index">{papers.map((paper) => <PaperRow paper={paper} heading="h2" />)}</div>
+  <div class="page-outro"><p>Citations are on Google Scholar.</p><a class="text-link" href={scholarUrl} target="_blank" rel="noreferrer">Google Scholar <Icon name="external" size={17} /></a></div>
+</Base>
