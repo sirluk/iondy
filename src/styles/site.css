@@ -310,7 +310,6 @@
   /* Hidden unless a look opts in: the article summary (AI slop's TL;DR) and the header AI slop slider. */
   .article-description { display: none; }
   .slop-slider { display: none; align-items: center; gap: 10px; white-space: nowrap; }
-  .slop-slider label { cursor: pointer; }
   .slop-slider-control { position: relative; display: block; width: 112px; height: 20px; }
   .slop-slider-rail { position: absolute; top: 50%; left: 7px; right: 7px; height: 4px; translate: 0 -50%; border-radius: 999px; background: var(--slop-track); }
   .slop-slider-rail::before { content: ''; position: absolute; inset: 0 auto 0 0; width: calc(var(--slop-level, 0) / var(--slop-max) * 100%); border-radius: inherit; background: var(--slop-fill); transition: width .2s; }
@@ -321,7 +320,6 @@
   .slop-slider input::-webkit-slider-thumb { width: 14px; height: 14px; margin-top: 3px; border: 0; border-radius: 50%; background: var(--slop-thumb); box-shadow: var(--slop-thumb-shadow); -webkit-appearance: none; appearance: none; }
   .slop-slider input::-moz-range-thumb { width: 14px; height: 14px; border: 0; border-radius: 50%; background: var(--slop-thumb); box-shadow: var(--slop-thumb-shadow); }
   .slop-slider input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 999px; }
-  .slop-slider output { min-width: 4.6em; }
 }
 
 @layer responsive {

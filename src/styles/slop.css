@@ -15,6 +15,7 @@
     & .main-nav a[aria-current] { color: var(--accent); }
     & .section-heading { margin-bottom: 8px; border-bottom: 1px solid; border-image: var(--grad) 1; }
     & .slop-slider { --slop-fill: var(--accent); --slop-thumb-shadow: 0 0 0 1.5px var(--accent), 0 2px 6px rgb(124 58 237 / .35); }
+    & .slop-slider-slop { color: var(--accent); }
     & :is(.post-row, .project-card, .paper-row) { margin-inline: -12px; padding-inline: 12px; border-radius: 12px; transition: background .2s, transform .3s cubic-bezier(.3, .7, .4, 1), box-shadow .3s; }
     & :is(.post-row, .project-card, .paper-row):hover { background: var(--accent-soft); }
     & :is(.text-link, .quiet-link) { color: var(--accent); text-decoration-color: rgb(124 58 237 / .35); }
@@ -51,7 +52,6 @@
     & .header-github { display: inline-flex; margin-left: 10px; padding: 10px 18px; border: 0; border-radius: 999px; background: var(--text); font-size: 14px; font-weight: 650; color: #fff; }
     & .header-github:hover { color: #fff; transform: none; }
     & .slop-slider { font-weight: 600; color: var(--muted); }
-    & .slop-slider output { color: var(--accent); }
 
     & .home-hero { padding: 96px 0 72px; text-align: center; }
     & .hero-copy h1 { font: 850 60px/1.04 var(--sans); letter-spacing: -.05em; }
@@ -230,6 +230,7 @@
   /* 3 · Spicy: gradients, badges, a featured card, a TL;DR box, and window-framed code. */
   :root[data-look='quiet'][data-slop~='3'] {
     & .slop-slider { --slop-fill: var(--grad); --slop-thumb: var(--grad); --slop-thumb-shadow: 0 0 0 2px #fff, 0 4px 12px rgb(168 85 247 / .6); }
+    & .slop-slider-slop { background: var(--grad); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; }
     & .text-link { background: var(--grad); box-shadow: 0 10px 24px -10px rgb(168 85 247 / .8); }
     & .main-nav a[aria-current] { background: var(--grad); color: #fff; box-shadow: 0 8px 20px -8px rgb(168 85 247 / .8); }
     & .writing-section .post-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -284,6 +285,8 @@
     & .wordmark { order: -2; margin-right: 6px; }
     & .site-header::after { content: '✨' / ''; order: -1; margin-right: -2px; font-size: 16px; }
     & .header-github::before { content: '⭐' / ''; }
+    & .slop-slider::before { content: '😎' / ''; margin-right: -5px; }
+    & .slop-slider::after { content: '🤖' / ''; margin-left: -5px; }
     & .section-heading::before { display: inline-block; padding: 5px 14px; border-radius: 999px; background: var(--accent-soft); font-size: 13px; font-weight: 700; color: var(--accent); }
     & .writing-section .section-heading::before { content: '📚 Latest insights' / ''; }
     & .research-section .section-heading::before { content: '🎓 Peer-reviewed research' / ''; }
@@ -330,6 +333,11 @@
     & .about-aside > a:nth-of-type(2) span::before { content: '🎓 ' / ''; }
     & .about-aside > a:nth-of-type(3) span::before { content: '🤗 ' / ''; }
     & .about-aside > a:nth-of-type(4) span::before { content: '📡 ' / ''; }
+
+    @media (max-width: 1050px) {
+      /* The ✨ and ⭐ widen the one-row header; between 761 and 1050px a shorter slider keeps it inside the page. */
+      & .slop-slider-control { width: 80px; }
+    }
   }
 
   /* 5 · Maximum: generated copy, bigger type, stronger glow, and motion. */
@@ -337,6 +345,7 @@
     --glow: 0 16px 48px -14px rgb(124 58 237 / .5);
     --blobs: radial-gradient(60rem 40rem at 0% -10%, rgb(168 85 247 / .24), transparent 60%), radial-gradient(50rem 36rem at 100% 0%, rgb(59 130 246 / .2), transparent 60%), radial-gradient(60rem 40rem at 50% 105%, rgb(236 72 153 / .18), transparent 60%);
     & .slop-slider { --slop-thumb-shadow: 0 0 0 2px #fff, 0 0 18px 2px rgb(236 72 153 / .7); }
+    & .slop-slider-slop { animation: slop-shimmer 8s linear infinite; }
     & .hero-copy::before { content: '✨ Building the future of AI, one token at a time' / ''; display: inline-block; margin-bottom: 28px; padding: 7px 16px; border: 1px solid rgb(124 58 237 / .22); border-radius: 999px; background: var(--glass); font-size: 13px; font-weight: 650; line-height: 1.5; color: var(--accent); box-shadow: var(--glow); }
     & .hero-copy h1 { font-size: 76px; animation: slop-shimmer 8s linear infinite; }
     & .home-hero::before { content: ''; display: block; width: 92px; height: 92px; margin: 0 auto 40px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0 6%, #f5d0fe 16%, #c084fc 38%, #7c3aed 64%, #312e81 100%); box-shadow: 0 0 64px 14px rgb(192 132 252 / .5), inset -8px -12px 24px rgb(49 46 129 / .45); animation: slop-orb 6s ease-in-out infinite; }

@@ -28,7 +28,7 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 
 ### How it works
 
-- `src/components/SlopSlider.astro` is the slider; level names are `slopLevels` in `src/lib/slop.ts`.
+- `src/components/SlopSlider.astro` is the slider, labelled *sleek* and *slop* at its ends; level names are `slopLevels` in `src/lib/slop.ts`, used only as the slider's `aria-valuetext`.
 - The head script in `Base.astro` reads `?slop=N` or the saved level (`localStorage` key `iondy-slop`) before first paint and sets `html[data-slop]` to every level up to the chosen one (`"1 2 3"` at level 3) and `--slop-level`.
 - `src/styles/slop.css` has one nested block per level, `:root[data-look='quiet'][data-slop~='N'] { & … }`, in the `overlays` cascade layer. That layer comes after `responsive`, so slop rules win over Quiet at every screen width.
 
