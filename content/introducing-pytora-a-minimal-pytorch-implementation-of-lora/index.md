@@ -1,5 +1,5 @@
 ---
-title: "Introducing pytora — a minimal PyTorch implementation of LoRA"
+title: "Introducing pytora — a minimal PyTorch implementation of LoRA"
 date: "2024-05-26"
 description: "A small, flexible implementation of LoRA using native PyTorch parametrizations."
 category: "Engineering"
