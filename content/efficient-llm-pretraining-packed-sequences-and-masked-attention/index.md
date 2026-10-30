@@ -199,7 +199,7 @@ eos_idx_expanded = torch.cat(
 
 
 ```text
-tensor([23,  7, 13, 23, 12, 21, 22, 23])
+tensor([ 0,  7, 13, 23, 35, 44, 45, 46])
 ```
 
 
@@ -216,7 +216,7 @@ normalized_idx = torch.where(normalized_idx == 0, T, normalized_idx)
 
 
 ```text
-tensor([ 7, 13, 23, 35, 44, 45, 46])
+tensor([23,  7, 13, 23, 12, 21, 22, 23])
 ```
 
 
@@ -233,7 +233,7 @@ reps = torch.where(reps < 1, normalized_idx[1:], reps)
 
 
 ```text
-tensor([23,  7, 13, 23, 12, 21, 22, 23])
+tensor([ 7,  6, 10, 12,  9,  1,  1])
 ```
 
 
