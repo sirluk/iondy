@@ -79,6 +79,18 @@ The article starts here.
 
 The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, and `Learning`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
 
+For a side note set apart from the main text, wrap it in an info box. Keep a blank line after the opening tag and before the closing one, so the Markdown inside still renders:
+
+```md
+<aside class="note">
+
+**A short question as the title**
+
+The note's text, with [links](https://example.com) and *emphasis*.
+
+</aside>
+```
+
 ### Papers
 
 Publications live in `papers` in `src/lib/content.ts`, in the order of the CV. `/research/` lists all of them with authors, venue, a one-line summary, and links; the homepage shows the first four. The first link of each paper is where its title points, so put arXiv first when there is an arXiv version. `authors` is optional, for papers whose author list isn't public yet.

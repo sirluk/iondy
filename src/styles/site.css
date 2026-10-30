@@ -161,6 +161,10 @@
   .prose li { padding-left: 4px; margin-block: 10px; }
   .prose li::marker { color: var(--accent); }
   .prose blockquote { margin: 28px 0; padding: 8px 24px; border-left: 2px solid var(--accent); color: var(--muted); }
+  /* <aside class="note"> in a post: a side note that steps out of the main text. !important keeps its padding even in looks that set paragraph margins in later layers. */
+  .prose .note { margin: 32px 0; padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .prose .note > :first-child { margin-top: 0 !important; }
+  .prose .note > :last-child { margin-bottom: 0 !important; }
   .prose img { display: block; margin: 34px auto 16px; border-radius: 2px; }
   .prose p:has(> img) { margin-block: 30px; }
   .prose p:has(> img) + p:has(> em:only-child) { color: var(--muted); text-align: center; font-size: 11px; line-height: 1.7; margin-top: -16px; }
