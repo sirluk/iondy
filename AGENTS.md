@@ -10,6 +10,7 @@ Guidance for coding agents working on iondy.com. The README describes the projec
 - Deploy: every push to `main` runs `.github/workflows/deploy.yml` and publishes to GitHub Pages. While the `COMING_SOON` repository variable is `true`, the live site shows `coming-soon/index.html` instead; local dev always shows the real site.
 - Quiet is deliberately minimal: no filler slogans, decorative counters, badges, or heavy cards. AI slop (below) is the only exception.
 - Never change the wording of articles, their figures, or their code.
+- Diagrams redrawn for the site keep their SVG source next to the PNG the post shows; the README's "Diagrams" section has the render command.
 
 ## The AI slop slider: consider it for every visible change
 

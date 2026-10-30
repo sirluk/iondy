@@ -79,6 +79,19 @@ The article starts here.
 
 The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, and `Learning`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
 
+### Diagrams
+
+A diagram drawn for the site keeps its SVG source next to the PNG the post shows, as in `content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/images/lora.svg`. The SVG uses the site's fonts from `node_modules`, so render it with Chrome from the repository root, at twice its size:
+
+```sh
+dir=content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/images
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --allow-file-access-from-files --hide-scrollbars \
+  --force-device-scale-factor=2 --window-size=720,380 --virtual-time-budget=3000 \
+  --screenshot=$dir/lora.png "file://$PWD/$dir/lora.svg"
+```
+
+`--window-size` is the SVG's `width` and `height`.
+
 For a side note set apart from the main text, wrap it in an info box. Keep a blank line after the opening tag and before the closing one, so the Markdown inside still renders:
 
 ```md
@@ -95,7 +108,7 @@ The note's text, with [links](https://example.com) and *emphasis*.
 
 Publications live in `papers` in `src/lib/content.ts`, in the order of the CV. `/research/` lists all of them with authors, venue, a one-line summary, and links; the homepage shows the first four. The first link of each paper is where its title points, so put arXiv first when there is an arXiv version. `authors` is optional, for papers whose author list isn't public yet.
 
-The seven imported posts retain their original article wording, 32 images, and 50 code blocks. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written.
+The seven imported posts retain their original article wording, 32 images, and 50 code blocks; the LoRA diagram in the pytora post has since been redrawn in the site's style. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written.
 
 ## Site source
 

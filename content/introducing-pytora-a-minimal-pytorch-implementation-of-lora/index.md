@@ -11,7 +11,7 @@ original_url: "https://medium.com/@lukas.hauzenberger/introducing-pytora-a-minim
 
 
 
-![](<images/5a9cf5ed3482dbdb.png>)
+![Diagram of a LoRA layer. The input x takes two paths: through the frozen pretrained weights W, and through the trainable LoRA adapter, where A projects it down to rank r and B projects it back up. A starts from 𝒩(0, σ²) and B at zero. The two outputs are added, giving h = Wx + BAx.](<images/lora.png>)
 
 
 

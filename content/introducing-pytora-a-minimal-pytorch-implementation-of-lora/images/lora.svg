@@ -1,0 +1,66 @@
+<svg width="720" height="380" viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+  <!-- Source of lora.png, which the post shows. It uses the site's fonts from node_modules; the README ("Diagrams") has the command that renders it. -->
+  <style>
+    @font-face { font-family: 'Geist'; font-weight: 100 900; src: url('../../../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Serif'; font-style: italic; font-weight: 200 900; src: url('../../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2') format('woff2'); }
+    @font-face { font-family: 'Serif'; font-style: italic; font-weight: 200 900; unicode-range: U+0370-03FF; src: url('../../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-greek-wght-italic.woff2') format('woff2'); }
+    @font-face { font-family: 'Serif'; font-style: normal; font-weight: 200 900; src: url('../../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2') format('woff2'); }
+    text { font-family: 'Geist', sans-serif; }
+    .label { font-size: 13px; font-weight: 500; fill: #18181b; }
+    .note { font-weight: 400; fill: #71717a; }
+    .math { font-family: 'Serif', 'STIX Two Math', serif; font-size: 16px; fill: #3f3f46; }
+    .var { font-style: italic; }
+    .trainable { fill: #0f766e; }
+    .vector-name { font-size: 24px; fill: #18181b; }
+    .wire { fill: none; stroke: #a1a1aa; stroke-width: 1.5; }
+    .cell { fill: #fff; stroke: #a1a1aa; }
+    .adapter { fill: #e7f3f1; stroke: #0f766e; stroke-width: 1.25; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 1 9 5 0 9Z" fill="#71717a" />
+    </marker>
+    <g id="vector">
+      <rect class="cell" y="0" width="20" height="20" />
+      <rect class="cell" y="20" width="20" height="20" />
+      <rect class="cell" y="40" width="20" height="20" />
+      <rect class="cell" y="60" width="20" height="20" />
+      <rect class="cell" y="80" width="20" height="20" />
+      <rect class="cell" y="100" width="20" height="20" />
+    </g>
+  </defs>
+  <rect width="720" height="380" fill="#fff" />
+  <g transform="translate(36 0)">
+    <!-- Input x splits into the frozen path (top) and the adapter path (bottom). -->
+    <use href="#vector" x="72" y="132" />
+    <text class="math var vector-name" x="82" y="282" text-anchor="middle">x</text>
+    <path class="wire" d="M92 192H124M124 100V280" />
+    <circle cx="124" cy="192" r="3" fill="#a1a1aa" />
+    <path class="wire" d="M124 100H196" marker-end="url(#arrow)" />
+    <path class="wire" d="M124 280H196" marker-end="url(#arrow)" />
+
+    <text class="label" x="200" y="28">Pretrained weights <tspan class="note" dx="4">frozen</tspan></text>
+    <rect x="200" y="40" width="200" height="120" rx="8" fill="#f4f4f5" stroke="#d4d4d8" />
+    <text class="math var" x="300" y="112" text-anchor="middle" style="font-size: 34px; fill: #18181b">W</text>
+
+    <text class="label" x="200" y="208">LoRA adapter <tspan class="note trainable" dx="4">trainable</tspan></text>
+    <path class="adapter" d="M200 220 284 266V294L200 340Z" />
+    <path class="adapter" d="M400 220 316 266V294L400 340Z" />
+    <path d="M284 280H316" stroke="#0f766e" stroke-width="1.25" />
+    <text class="math var trainable" x="300" y="258" text-anchor="middle">r</text>
+    <text class="math var trainable" x="236" y="289" text-anchor="middle" style="font-size: 26px">A</text>
+    <text class="math var trainable" x="366" y="289" text-anchor="middle" style="font-size: 26px">B</text>
+    <text class="math" x="236" y="366" text-anchor="middle"><tspan class="var">A</tspan> ∼ 𝒩(0, <tspan class="var">σ</tspan>²)</text>
+    <text class="math" x="366" y="366" text-anchor="middle"><tspan class="var">B</tspan> = 0</text>
+
+    <!-- Both paths are added to give h. -->
+    <path class="wire" d="M400 100H480V174" marker-end="url(#arrow)" />
+    <path class="wire" d="M400 280H480V210" marker-end="url(#arrow)" />
+    <circle cx="480" cy="192" r="14" fill="#fff" stroke="#a1a1aa" stroke-width="1.5" />
+    <path d="M480 185V199M473 192H487" stroke="#52525b" stroke-width="1.5" stroke-linecap="round" />
+    <path class="wire" d="M494 192H552" marker-end="url(#arrow)" />
+    <use href="#vector" x="556" y="132" />
+    <text class="math var vector-name" x="566" y="282" text-anchor="middle">h</text>
+    <text class="math" x="576" y="366" text-anchor="end"><tspan class="var">h</tspan> = <tspan class="var">Wx</tspan> + <tspan class="var">BAx</tspan></text>
+  </g>
+</svg>
