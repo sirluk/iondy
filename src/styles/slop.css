@@ -20,7 +20,7 @@
     & :is(.post-row, .project-card, .paper-row) { margin-inline: -12px; padding-inline: 12px; border-radius: 12px; transition: background .2s, transform .3s cubic-bezier(.3, .7, .4, 1), box-shadow .3s; }
     & :is(.post-row, .project-card, .paper-row):hover { background: var(--accent-soft); }
     & :is(.text-link, .quiet-link) { color: var(--accent); text-decoration-color: rgb(124 58 237 / .35); }
-    & .prose a { color: var(--accent); text-decoration-color: rgb(124 58 237 / .35); }
+    & .prose a, & .about-copy > p a { color: var(--accent); text-decoration-color: rgb(124 58 237 / .35); }
     & .prose pre { --surface: #faf9ff; border-color: rgb(124 58 237 / .16); border-radius: 14px; box-shadow: 0 14px 30px -20px rgb(124 58 237 / .5); }
     & .prose img { border-radius: 14px; box-shadow: 0 12px 30px -18px rgb(30 27 75 / .35); }
     & .prose .note { border-color: rgb(124 58 237 / .16); border-radius: 14px; background: #faf9ff; box-shadow: 0 14px 30px -20px rgb(124 58 237 / .5); }
@@ -123,7 +123,7 @@
     & .prose h2 { margin: 56px 0 16px; font: 850 30px/1.25 var(--sans); letter-spacing: -.035em; color: var(--text); scroll-margin-top: 110px; }
     & .prose h3 { margin: 38px 0 10px; font: 750 21px/1.35 var(--sans); letter-spacing: -.02em; scroll-margin-top: 110px; }
     & .prose strong { font-weight: 750; color: var(--text); }
-    & .prose a { font-weight: 600; text-decoration: underline 2px rgb(168 85 247 / .35); text-underline-offset: 4px; }
+    & .prose a, & .about-copy > p a { font-weight: 600; text-decoration: underline 2px rgb(168 85 247 / .35); text-underline-offset: 4px; }
     & .prose > p:has(> img) { margin-inline: 0; }
     & .prose img { margin: 36px auto 14px; border-radius: 20px; box-shadow: 0 24px 50px -24px rgb(30 27 75 / .45), 0 0 0 1px rgb(124 58 237 / .12); }
     & .prose pre { margin: 32px 0; padding: 22px 24px; font: 13.5px/1.7 var(--mono); }

@@ -152,7 +152,7 @@
   .toc-top { display: inline-block; font: 9px var(--mono); color: var(--subtle); margin-top: 25px; }
   .prose { font: 16px/1.95 var(--sans); overflow-wrap: break-word; }
   .prose p { margin-block: 22px; }
-  .prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .prose a, .about-copy > p a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
   .prose h2 { font: 450 34px/1.25 var(--heading); letter-spacing: -.5px; margin: 54px 0 20px; scroll-margin-top: 35px; }
   .prose h3 { font: 500 22px/1.4 var(--heading); margin: 35px 0 16px; scroll-margin-top: 35px; }
   .prose h2 strong, .prose h3 strong { font-weight: inherit; }

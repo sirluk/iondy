@@ -97,8 +97,8 @@
   [data-look='quiet'] .prose p { margin-block: 18px; text-wrap: pretty; }
   [data-look='quiet'] .prose h2 { font: 600 19px/1.4 var(--sans); letter-spacing: -.25px; margin: 48px 0 10px; }
   [data-look='quiet'] .prose h3 { font: 600 16px/1.5 var(--sans); margin: 32px 0 6px; }
-  [data-look='quiet'] .prose a { color: var(--text); text-decoration-color: #c8c8cd; text-decoration-thickness: 1px; }
-  [data-look='quiet'] .prose a:hover { color: var(--accent); text-decoration-color: currentColor; }
+  [data-look='quiet'] .prose a, [data-look='quiet'] .about-copy > p a { color: var(--text); text-decoration-color: #c8c8cd; text-decoration-thickness: 1px; }
+  [data-look='quiet'] .prose a:hover, [data-look='quiet'] .about-copy > p a:hover { color: var(--accent); text-decoration-color: currentColor; }
   [data-look='quiet'] .prose li::marker { color: var(--subtle); }
   [data-look='quiet'] .prose blockquote { border-left-color: var(--line); }
   [data-look='quiet'] .prose .note { margin-inline: -21px; padding: 18px 20px; border-color: #ececee; border-radius: 10px; background: #fafafa; font-size: 15px; line-height: 1.7; }
