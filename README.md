@@ -77,6 +77,8 @@ The article starts here.
 ![A useful image](images/example.png)
 ```
 
+A post whose figures come from data can keep the scripts and data in a `source/` folder next to `images/`, with a short README on how to rebuild them; the site builds only `index.md` and the images it shows. The sliding-window post does this.
+
 The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, and `Learning`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
 
 ### Diagrams
