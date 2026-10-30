@@ -21,10 +21,10 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 | --- | --- | --- |
 | 0 | Off | Plain Quiet. |
 | 1 | Mild | Purple accent, faint colour blobs, gradient wordmark and hairlines, rounded and shadowed code and images, hover pills on list rows. |
-| 2 | Medium | The landing-page template: Inter, 1120px layout, dot grid, floating glass navbar, centred hero, glass cards, pill buttons, avatar, contents card, the GitHub header button. |
-| 3 | Spicy | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers, dark window-framed code. |
-| 4 | Hot | Emoji everywhere: section and page badges, categories, dates, headings, ✅ bullets. |
-| 5 | Maximum | Parody copy (taglines, "Trusted by localhost", buzzword ribbon), the AI orb, "reimagined.", shimmering text, stronger glows, bigger hover lifts. |
+| 2 | Medium | The landing-page template: Inter, 1120px layout, dot grid, floating glass navbar, centred hero, glass cards, pill buttons, avatar (articles and About), contents card, reading progress bar, the GitHub header button. |
+| 3 | Spicy | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers on research cards, dark window-framed code. |
+| 4 | Hot | Emoji everywhere: section and page badges, categories, filter pills, code-block languages, dates, headings, ✅ bullets. |
+| 5 | Maximum | Parody copy (taglines, "Trusted by localhost", buzzword ribbon, Reviewer #2, "AI Summary"), `iondy.ai` above 1050px, the AI orb, "reimagined.", shimmering text, stronger glows, bigger hover lifts. |
 
 ### How it works
 
@@ -41,12 +41,14 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 
 Per-item rules to update when content changes:
 
-- **New post category**: add it to the `category` enum in `src/content.config.ts`, and its emoji to the `.post-row[data-category='…']` rules in level 4.
-- **New page**: add its badge in level 4 (`main:has(.<page-class>) .page-intro::before`) and give it a distinctive container class to match on.
+- **New post category**: add it to the `category` enum in `src/content.config.ts`, and its emoji to the `.post-row[data-category='…']` and `.filter-buttons button[data-filter='…']` rules in level 4.
+- **New page**: add its badge in level 4 (`main:has(.<page-class>) .page-intro::before`) and give it a distinctive container class to match on, as the 404 page's `.not-found`.
 - **New homepage section**: add a `.section-heading::before` badge in level 4.
 - **About links**: the level 4 emoji are matched by position (`.about-aside > a:nth-of-type(n)`); keep them in order when adding or removing links.
 - **Restored projects**: the level 4 tile emoji are matched by `.project-card:nth-child(n)`.
 - **Posts**: the level 3 TL;DR box shows the post's front-matter `description`, so keep descriptions to one clear sentence.
+- **New code language**: level 4 labels code blocks by `pre[data-language='…']` (🐍 python, 🐳 dockerfile, 📝 text, 💻 anything else); add an emoji when a post uses a new language.
+- **Header width**: between 761 and 1050px the header is one row with little room to spare at levels 4 and 5. Level 4 shortens the slider there and level 5 shows `iondy.ai` only above 1050px; anything new in the header needs the same care.
 - **Formulas**: `$$ … $$` in a post is typeset with KaTeX by the Sätteri plugin in `astro.config.mjs`; a single `$` stays text. Formulas look the same at every level; wide ones scroll sideways on phones.
 - **Info boxes**: posts mark side notes with `<aside class="note">`, with blank lines around the Markdown inside (README, "Writing and content"). Quiet styles it like a code block; levels 1 to 4 restyle it, and levels 3 and 4 add a "Deep dive" label.
 
