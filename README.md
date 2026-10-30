@@ -137,7 +137,7 @@ The seven imported posts retain their original article wording and 50 code block
 - `src/lib/content.ts`: post helpers, the papers list, and project descriptions for the offline projects page.
 - `public/`: the site's favicon and future static assets.
 
-Quiet uses a light background, restrained typography, and minimal decoration; AI slop is the deliberate exception. Elsewhere, avoid filler taglines, status notes, decorative counters, and unnecessary panels. Project links come from the imported articles. The introductory copy avoids assuming a current job title, affiliation, or research position.
+Quiet uses a light background, restrained typography, and minimal decoration; AI slop is the deliberate exception. Elsewhere, avoid filler taglines, status notes, decorative counters, and unnecessary panels. Project links come from the imported articles. Your PhD, current position and research interests are stated once, in the About page's first paragraph; keep them up to date there rather than repeating them elsewhere.
 
 ## Import provenance
 
