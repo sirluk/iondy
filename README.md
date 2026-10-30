@@ -120,7 +120,7 @@ The seven imported posts retain their original article wording and 50 code block
 
 - Code blocks name their language, so all of them are highlighted.
 - The diff-pruning post's formulas, which were small images, are typeset with KaTeX.
-- The packed-sequences post's tensor printouts, which were screenshots, are text. Three of them showed the wrong tensor on Medium and now match the code above them.
+- The packed-sequences post's tensor printouts, which were screenshots, are text. The batched ones came from a run with other sentences; they now show the output of the article's own code, taken from its notebook.
 - The Mistral post's headings are main headings, so its contents list isn't empty.
 - The pytora post no longer repeats its title as a heading, its title uses normal spaces around the dash, and its LoRA diagram has been redrawn in the site's style.
 
