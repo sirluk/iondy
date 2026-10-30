@@ -7,3 +7,4 @@ dist/
 .site-preview/
 .screenshots/
 npm-debug.log*
+.claude/settings.local.json
