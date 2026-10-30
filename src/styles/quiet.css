@@ -140,7 +140,7 @@
 
   [data-look='quiet'] .site-footer { justify-content: flex-start; gap: 24px; margin-top: 112px; padding: 0 0 64px; border: 0; }
   [data-look='quiet'] .footer-name { font-size: 14px; font-weight: 500; color: var(--muted); }
-  [data-look='quiet'] .footer-links { gap: 18px; font-size: 14px; color: var(--subtle); }
+  [data-look='quiet'] .footer-links { gap: 6px 18px; font-size: 14px; color: var(--subtle); }
   [data-look='quiet'] .footer-links svg { display: none; }
   [data-look='quiet'] .footer-links a:hover { color: var(--text); }
 
@@ -233,6 +233,6 @@
     [data-look='quiet'] .about-aside { margin-top: 40px; }
     [data-look='quiet'] .about-aside > a > span { flex-direction: column; gap: 0; }
     [data-look='quiet'] .site-footer { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 72px; padding-bottom: 48px; }
-    [data-look='quiet'] .footer-links { gap: 18px; font-size: 14px; }
+    [data-look='quiet'] .footer-links { gap: 6px 18px; font-size: 14px; }
   }
 }

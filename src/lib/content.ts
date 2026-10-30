@@ -49,6 +49,7 @@ export const projects = [
 ];
 
 export const scholarUrl = 'https://scholar.google.com/citations?user=fpj_6tYAAAAJ';
+export const huggingfaceUrl = 'https://huggingface.co/sirluk';
 
 export type Paper = {
   title: string;

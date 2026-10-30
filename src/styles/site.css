@@ -68,7 +68,7 @@
   main { min-height: calc(100svh - 340px); outline: none; }
   .site-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding: 35px 0 125px; margin-top: 96px; gap: 25px; }
   .footer-name { font-size: 11px; font-weight: 550; display: block; }
-  .footer-links { display: flex; gap: 25px; color: var(--muted); font-size: 10px; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 25px; color: var(--muted); font-size: 10px; }
   .footer-links a { display: inline-flex; gap: 5px; align-items: center; }
   .footer-links a:hover { color: var(--accent); }
   .home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 255px; column-gap: 70px; }
