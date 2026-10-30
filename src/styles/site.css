@@ -171,6 +171,7 @@
   .prose code { font: 12px/1.8 var(--mono); background: var(--surface); padding: 3px 5px; border-radius: 3px; }
   .prose pre { max-width: 100%; overflow-x: auto; padding: 24px; border: 1px solid var(--line); border-radius: 5px; margin-block: 28px; tab-size: 4; background: var(--surface) !important; color: var(--text); }
   .prose pre code { font: 11px/1.9 var(--mono); background: none; padding: 0; }
+  .prose .katex-display { overflow-x: auto; overflow-y: hidden; padding-block: 2px; }
   .prose pre, .prose pre span { color: var(--shiki-light, var(--text)); }
   .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 13px; }
   .prose td, .prose th { border-bottom: 1px solid var(--line); padding: 12px; text-align: left; }

@@ -23,7 +23,9 @@ As already mentioned Diff-Pruning tries reduce the number of weights that get ch
 
 
 
-![](<images/61476ced0a702005.png>)
+$$
+\theta_\tau = \theta_{pre} + \delta_\tau
+$$
 
 
 
@@ -31,7 +33,9 @@ instead of
 
 
 
-![](<images/5112d9defea16319.png>)
+$$
+\theta_{pre} \rightarrow \theta_\tau
+$$
 
 
 
@@ -39,7 +43,9 @@ The initial state of all weights in δ\_τ is 0. We now want to limit the number
 
 
 
-![](<images/c664961a505479e5.png>)
+$$
+L(.) + \lambda \sum_{i=1}^{d} \mathbf{1}\big\{\delta_{\tau,i} \neq 0\big\}
+$$
 
 
 
@@ -59,7 +65,13 @@ In principle, approximate L0 regularization works as follows:
 
 
 
-![](<images/611d60706300a007.png>)
+$$
+\begin{aligned}
+s &= \operatorname{Sigmoid}\big(\log u - \log(1 - u) + \log \alpha\big), \quad u \sim \mathcal{U}(0, 1) \\
+\bar{s} &= s(r - l) + l \\
+z &= \min(1, \max(0, \bar{s}))
+\end{aligned}
+$$
 
 
 
@@ -71,7 +83,9 @@ u is drawn from a uniform distribution and log(α) is the distribution parameter
 
 
 
-![](<images/d6dc8eeb39458f5b.png>)
+$$
+\theta_{new} = \theta \odot z
+$$
 
 
 
@@ -79,7 +93,9 @@ u is drawn from a uniform distribution and log(α) is the distribution parameter
 
 
 
-![](<images/291fafd7e81d56ef.png>)
+$$
+\lambda \sum_{i=1}^{d} \operatorname{Sigmoid}\Big(\log \alpha_i - \log\Big(-\frac{l}{r}\Big)\Big)
+$$
 
 
 
@@ -87,7 +103,9 @@ u is drawn from a uniform distribution and log(α) is the distribution parameter
 
 
 
-![](<images/f53c1776e66ffc6b.png>)
+$$
+\min(1, \max(0, \operatorname{Sigmoid}(\log \alpha)(r - l) + l))
+$$
 
 
 
@@ -115,7 +133,9 @@ By using this technique of differentiable L0 regularization we now have all the 
 
 
 
-![](<images/e5f830f7400e7ea8.png>)
+$$
+L(.) + \lambda \sum_{i=1}^{d} \operatorname{Sigmoid}\Big(\log \alpha_i - \log\Big(-\frac{l}{r}\Big)\Big)
+$$
 
 
 
@@ -123,7 +143,9 @@ With the learned z mask the finetuned weights for diff pruning are now construct
 
 
 
-![](<images/5394eba913e20ed5.png>)
+$$
+\theta_\tau = \theta_{pre} + z_\tau \odot \delta_\tau
+$$
 
 
 
@@ -179,7 +201,9 @@ In the forward method you define which operations are performed on the original 
 
 
 
-![](<images/5394eba913e20ed5.png>)
+$$
+\theta_\tau = \theta_{pre} + z_\tau \odot \delta_\tau
+$$
 
 
 
@@ -187,7 +211,12 @@ directly but rather defined the weight parametrization as
 
 
 
-![](<images/46cc9a256dceb21f.png>)
+$$
+\begin{aligned}
+\text{temp} &= (\theta_{full} - \theta_{pre}) \\
+\theta_\tau &= \theta_{full} - \text{temp} + z_\tau * (\theta_{full} - \theta_{pre})
+\end{aligned}
+$$
 
 
 

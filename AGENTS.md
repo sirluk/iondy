@@ -46,6 +46,7 @@ Per-item rules to update when content changes:
 - **About links**: the level 4 emoji are matched by position (`.about-aside > a:nth-of-type(n)`); keep them in order when adding or removing links.
 - **Restored projects**: the level 4 tile emoji are matched by `.project-card:nth-child(n)`.
 - **Posts**: the level 3 TL;DR box shows the post's front-matter `description`, so keep descriptions to one clear sentence.
+- **Formulas**: `$$ … $$` in a post is typeset with KaTeX by the Sätteri plugin in `astro.config.mjs`; a single `$` stays text. Formulas look the same at every level; wide ones scroll sideways on phones.
 - **Info boxes**: posts mark side notes with `<aside class="note">`, with blank lines around the Markdown inside (README, "Writing and content"). Quiet styles it like a code block; levels 1 to 4 restyle it, and levels 3 and 4 add a "Deep dive" label.
 
 ### Pitfalls (each one has bitten this codebase)

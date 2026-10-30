@@ -29,7 +29,7 @@ Packed sequences offer an elegant solution. Instead of padding, we concatenate m
 
 
 
-```
+```python
 # Setup
 import torch; torch.set_printoptions(linewidth=200)
 from transformers import AutoTokenizer, AutoConfig, AutoModelForCausalLM
@@ -41,7 +41,7 @@ model = AutoModelForCausalLM.from_config(config)
 
 
 
-```
+```python
 sentence1 = "The cat sat on the mat"
 sentence2 = "The dog ate my homework"
 sentence3 = "My aunt is a teacher"
@@ -66,7 +66,7 @@ The standard attention mask for causal language modeling for the packed sequence
 
 
 
-```
+```python
 tokenized_sentences = torch.tensor(tokenized_sentences)
 attn_mask = torch.ones(tokenized_sentences.size(0), tokenized_sentences.size(0), dtype=torch.int).tril()
 attn_mask
@@ -82,7 +82,7 @@ With this mask however, when processing the second sentence, the model can still
 
 
 
-```
+```python
 def get_attention_mask_for_packed_sequence(x, token_id, eos: bool = True):
     # store sequence length in variable for easier readability
     T = tokenized_sentences.size(0)
@@ -128,7 +128,7 @@ We can leverage the code from above function to generate the tensor with positio
 
 
 
-```
+```python
 pos_ids = torch.arange(T) - torch.repeat_interleave(torch.cat([torch.tensor([0]), eos_indices+1], dim=0)[:-1], reps)
 pos_ids
 ```
@@ -143,7 +143,7 @@ Typically during training we would like to process and entire batch of sequences
 
 
 
-```
+```python
 sentence4 = "Rome wasn't built in a day"
 sentence5 = "My hovercraft is full of eels"
 
@@ -163,7 +163,7 @@ We assign the shape of the batch to two variables B and T. This makes the follow
 
 
 
-```
+```python
 B, T = batch.shape
 ```
 
@@ -173,14 +173,16 @@ The main challenge for the batched implementation is to construct the same “re
 
 
 
-```
+```python
 eos_idx = (batch.view(-1) == tokenizer.eos_token_id) \
   .nonzero(as_tuple=True)[0] + 1
 ```
 
 
 
-![](<images/ffaf09b0936d8704.png>)
+```text
+tensor([ 7, 13, 23, 35, 44, 45, 46])
+```
 
 
 
@@ -188,7 +190,7 @@ To this index vector we add the 0 index and the last token index for each batch 
 
 
 
-```
+```python
 eos_idx_expanded = torch.cat(
   [eos_idx, torch.arange(0,B*T+1,T)]
 ).unique().sort()[0]
@@ -196,7 +198,9 @@ eos_idx_expanded = torch.cat(
 
 
 
-![](<images/c8e4d3b615de8a97.png>)
+```text
+tensor([23,  7, 13, 23, 12, 21, 22, 23])
+```
 
 
 
@@ -204,14 +208,16 @@ Next since our index vector contains the global indices of EOS tokens within the
 
 
 
-```
+```python
 normalized_idx = eos_idx_expanded - (eos_idx_expanded // T) * T
 normalized_idx = torch.where(normalized_idx == 0, T, normalized_idx)
 ```
 
 
 
-![](<images/ffaf09b0936d8704.png>)
+```text
+tensor([ 7, 13, 23, 35, 44, 45, 46])
+```
 
 
 
@@ -219,14 +225,16 @@ With the normalized indices we can check how often we need to repeat each EOS to
 
 
 
-```
+```python
 reps = normalized_idx[1:] - normalized_idx[:-1]
 reps = torch.where(reps < 1, normalized_idx[1:], reps)
 ```
 
 
 
-![](<images/c8e4d3b615de8a97.png>)
+```text
+tensor([23,  7, 13, 23, 12, 21, 22, 23])
+```
 
 
 
@@ -234,7 +242,7 @@ Now we can create the batched repeated index tensor
 
 
 
-```
+```python
 repeated_idx = torch.repeat_interleave(
   normalized_idx[1:], reps
 ).view(B,1,T).expand(-1,T,-1)
@@ -250,7 +258,7 @@ The rest is similar to the example with batch size = 1. We construct a tensor wi
 
 
 
-```
+```python
 mask_indices = torch.arange(T).view(1,-1,1).expand(B, -1, T)
 # create mask
 mask = torch.ones(T, T, dtype=torch.bool).tril().expand(B, -1, -1)
@@ -263,7 +271,7 @@ Here is the full function. I added to possiblity to chose between checking eos t
 
 
 
-```
+```python
 def get_attention_mask_for_packed_sequence(x, token_id, eos: bool = True):
     B, T = x.shape
     eos_idx = (x.view(-1) == token_id).nonzero(as_tuple=True)[0] + eos
@@ -285,7 +293,7 @@ Analogously to the example above without a batch dimension you can reuse the cod
 
 
 
-```
+```python
 pos_ids = (torch.arange(B*T) - torch.repeat_interleave(eos_idx_expanded[:-1], reps)).view(B,T)
 pos_ids
 ```

@@ -106,7 +106,7 @@ As the first part of our step-by-step guide, lets go over how we define our Vert
 
 
 
-```
+```python
 from kfp import dsl
 from kfp import components as comp
 
@@ -122,7 +122,7 @@ We then use the “create\_component\_from\_func” function from the Kubeflow S
 
 
 
-```
+```python
 train_model_op_fun = (
     comp.create_component_from_func(
         train_model,
@@ -147,7 +147,7 @@ Once we defined our components like this we need to specify the order in which t
 
 
 
-```
+```python
 def train_model(
     comp_params: dict
 ) -> NamedTuple('train_model_outputs', [
@@ -259,7 +259,7 @@ Once finished, the Vertex AI training job saves all model files into a specified
 
 
 
-```
+```python
 def build_model(
     comp_params: dict,
 ) -> NamedTuple('build_model_outputs', [
@@ -320,7 +320,7 @@ PyTorch models are served via [TorchServe](<https://github.com/pytorch/serve>), 
 
 
 
-```
+```dockerfile
 FROM pytorch/torchserve:latest-gpu
 ```
 
@@ -330,7 +330,7 @@ We will user the root user to upgrade pip and setuptools to the latest version (
 
 
 
-```
+```dockerfile
 USER root
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
@@ -343,7 +343,7 @@ We then copy training outputs into the model-server directory which is the direc
 
 
 
-```
+```dockerfile
 COPY ./custom_handler.py /home/model-server/
 COPY ./model.pt /home/model-server/
 COPY ./helpers.zip /home/model-server/
@@ -352,7 +352,7 @@ COPY ./label_map.json /home/model-server/
 
 
 
-```
+```bash
 # copy_artifacts.sh
 
 gsutil -m cp -r $_MODEL_DIR/* $_BUILD_DIR/.
@@ -375,7 +375,7 @@ Next we define the serving configuration such as health check and prediction lis
 
 
 
-```
+```dockerfile
 # create torchserve configuration file
 USER root
 RUN printf "\nservice_envelope=json" >> /home/model-server/config.properties
@@ -394,7 +394,7 @@ We now run the torch-model-archiver command to package all model artifacts into 
 
 
 
-```
+```dockerfile
 # create model archive file packaging model artifacts and dependencies
 RUN torch-model-archiver -f \
     --model-name=$_MODEL_NAME \
@@ -411,7 +411,7 @@ Finally we launch a TorchServe HTTP server to enable serving of the model refere
 
 
 
-```
+```dockerfile
 # run Torchserve HTTP serve to respond to prediction requests
 CMD ["torchserve", \
     "--start", \
@@ -452,7 +452,7 @@ Below is the code for our custom handler class
 
 
 
-```
+```python
 import zipfile
 with zipfile.ZipFile("helpers.zip","r") as zip_ref:
     zip_ref.extractall(".")
@@ -607,7 +607,7 @@ Setting up the Dockerfile and custom handler are the most complicated parts for 
 
 
 
-```
+```python
 def deploy_model(
     comp_params: dict,
     endpoint_image_uri: str,
@@ -663,7 +663,7 @@ Almost all of the heavy lifting for this pipeline was done by the *train\_model*
 
 
 
-```
+```python
 def save_model_info(
     comp_params: dict,
     model_info: dict,
@@ -720,7 +720,7 @@ or alternatively you can use the Python SDK:
 
 
 
-```
+```python
 from google.cloud import aiplatform
 
 def endpoint_predict_sample(

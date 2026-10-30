@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import 'katex/dist/katex.min.css';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { getPosts, formatDate, readingTime } from '../../lib/content';
@@ -8,6 +9,7 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
+const sections = headings.filter((heading) => heading.depth === 2);
 const posts = await getPosts();
 const index = posts.findIndex((entry) => entry.id === post.id);
 const next = posts[(index + 1) % posts.length];
@@ -21,6 +23,6 @@ const next = posts[(index + 1) % posts.length];
       <div class="article-tags">{post.data.tags.map((tag) => <span>{tag.replaceAll('-', ' ')}</span>)}</div>
       {next && <a class="next-article" href={`/writing/${next.id}/`}><span class="micro-label">Continue reading</span><h2>{next.data.title}</h2><Icon name="arrow" size={24} /></a>}
     </article>
-    {headings.length > 1 && <aside class="article-toc"><span class="micro-label">On this page</span><nav aria-label="Article contents">{headings.filter((heading) => heading.depth === 2).map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav><a class="toc-top" href="#main">Back to top ↑</a></aside>}
+    {sections.length > 1 && <aside class="article-toc"><span class="micro-label">On this page</span><nav aria-label="Article contents">{sections.map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav><a class="toc-top" href="#main">Back to top ↑</a></aside>}
   </div>
 </Base>

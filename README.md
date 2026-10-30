@@ -92,6 +92,14 @@ dir=content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/images
 
 `--window-size` is the SVG's `width` and `height`.
 
+Code blocks take a language after the opening fence (` ```python `) for syntax highlighting. Formulas go between `$$` lines and are typeset with KaTeX when the site builds; a single `$` stays text:
+
+```md
+$$
+\theta_\tau = \theta_{pre} + \delta_\tau
+$$
+```
+
 For a side note set apart from the main text, wrap it in an info box. Keep a blank line after the opening tag and before the closing one, so the Markdown inside still renders:
 
 ```md
@@ -108,7 +116,13 @@ The note's text, with [links](https://example.com) and *emphasis*.
 
 Publications live in `papers` in `src/lib/content.ts`, in the order of the CV. `/research/` lists all of them with authors, venue, a one-line summary, and links; the homepage shows the first four. The first link of each paper is where its title points, so put arXiv first when there is an arXiv version. `authors` is optional, for papers whose author list isn't public yet.
 
-The seven imported posts retain their original article wording, 32 images, and 50 code blocks; the LoRA diagram in the pytora post has since been redrawn in the site's style. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written.
+The seven imported posts retain their original article wording and 50 code blocks. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written. Since the import, these Medium leftovers were fixed without changing the wording:
+
+- Code blocks name their language, so all of them are highlighted.
+- The diff-pruning post's formulas, which were small images, are typeset with KaTeX.
+- The packed-sequences post's tensor printouts, which were screenshots, are text.
+- The Mistral post's headings are main headings, so its contents list isn't empty.
+- The pytora post no longer repeats its title as a heading, its title uses normal spaces around the dash, and its LoRA diagram has been redrawn in the site's style.
 
 ## Site source
 

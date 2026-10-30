@@ -7,10 +7,6 @@ tags: ["fine-tuning", "transformers", "machine-learning", "llm"]
 original_url: "https://medium.com/@lukas.hauzenberger/introducing-pytora-a-minimal-pytorch-implementation-of-lora-b4ea527b6ac0"
 ---
 
-## Introducing pytora — a minimal PyTorch implementation of LoRA
-
-
-
 ![Diagram of a LoRA layer. The input x takes two paths: through the frozen pretrained weights W, and through the trainable LoRA adapter, where A projects it down to rank r and B projects it back up. A starts from 𝒩(0, σ²) and B at zero. The two outputs are added, giving h = Wx + BAx.](<images/lora.png>)
 
 
@@ -49,7 +45,7 @@ In pytora LoRA adapters are implemented this way. A LoRA layer is defined as a s
 
 
 
-```
+```python
 import torch
 from torch import nn
 from torch.nn.utils.parametrize import register_parametrization
@@ -131,7 +127,7 @@ If you install pytora into your environment you can add LoRA adapters to all or 
 
 
 
-```
+```python
 from transformers import AutoModel
 from pytora import apply_lora
 

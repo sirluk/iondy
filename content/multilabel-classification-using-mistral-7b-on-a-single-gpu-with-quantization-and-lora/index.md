@@ -19,7 +19,7 @@ This guide is by no means the first of its kind and there are other great resour
 
 
 
-### Imports
+## Imports
 
 
 
@@ -27,7 +27,7 @@ All required imports for the code snippets below
 
 
 
-```
+```python
 import os
 import random
 import functools
@@ -54,7 +54,7 @@ from transformers import (
 
 
 
-### Dataset
+## Dataset
 
 
 
@@ -82,7 +82,7 @@ We create a HF dataset from train.csv as this is required later on when using ot
 
 
 
-```
+```python
 # set random seed
 random.seed(0)
 
@@ -124,7 +124,7 @@ One slightly exotic package used in this snippet is probably [skmultilearn ](<ht
 
 
 
-### Initialize the model
+## Initialize the model
 
 
 
@@ -136,7 +136,7 @@ For finetuning we use LoRA to learn two lower dimensional diff matrices instead 
 
 
 
-```
+```python
 # model name
 model_name = 'mistralai/Mistral-7B-v0.1'
 
@@ -190,7 +190,7 @@ The HF class *AutoModelForSequenceClassification* initializes the base model wit
 
 
 
-### Training
+## Training
 
 
 
@@ -205,7 +205,7 @@ We are almost ready to finetune our model with the HF Trainer class, after prepa
 
 
 
-```
+```python
 # define custom batch preprocessor
 def collate_fn(batch, tokenizer):
     dict_keys = ['input_ids', 'attention_mask', 'labels']
@@ -238,7 +238,7 @@ Furthermore we also need to define a custom trainer class to be able to calculat
 
 
 
-```
+```python
 # create custom trainer class to be able to pass label weights and calculate mutilabel loss
 class CustomTrainer(Trainer):
 
@@ -264,7 +264,7 @@ Now everything is ready and we can let HF do its magic. (depending on your GPU m
 
 
 
-```
+```python
 # define training args
 training_args = TrainingArguments(
     output_dir = 'multilabel_classification',
@@ -304,7 +304,7 @@ Thats it! You just finetuned a state-of-the-art LLM for multilabel classificatio
 
 
 
-```
+```python
 # load model
 peft_model_id = 'multilabel_mistral'
 model = AutoModelForSequenceClassification.from_pretrained(peft_model_id)
