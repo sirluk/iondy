@@ -50,6 +50,7 @@ export const projects = [
 
 export const scholarUrl = 'https://scholar.google.com/citations?user=fpj_6tYAAAAJ';
 export const huggingfaceUrl = 'https://huggingface.co/sirluk';
+export const linkedinUrl = 'https://www.linkedin.com/in/lukas-hauzenberger/';
 
 export type Paper = {
   title: string;

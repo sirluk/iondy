@@ -352,7 +352,8 @@
     & .about-aside > a:nth-of-type(1) span::before { content: '🐙 ' / ''; }
     & .about-aside > a:nth-of-type(2) span::before { content: '🎓 ' / ''; }
     & .about-aside > a:nth-of-type(3) span::before { content: '🤗 ' / ''; }
-    & .about-aside > a:nth-of-type(4) span::before { content: '📡 ' / ''; }
+    & .about-aside > a:nth-of-type(4) span::before { content: '💼 ' / ''; }
+    & .about-aside > a:nth-of-type(5) span::before { content: '📡 ' / ''; }
 
     @media (max-width: 1050px) {
       /* The ✨ and ⭐ widen the one-row header; between 761 and 1050px a shorter slider keeps it inside the page. */
