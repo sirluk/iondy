@@ -20,7 +20,7 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 | Level | Name | Adds |
 | --- | --- | --- |
 | 0 | Off | Plain Quiet. |
-| 1 | Mild | Purple accent, faint colour blobs, gradient wordmark and hairlines, rounded and shadowed code and images, hover pills on list rows. |
+| 1 | Mild | Purple accent, faint colour blobs, gradient wordmark and hairlines, rounded and shadowed code and images, hover pills on list rows, the About page's profile links (Quiet leaves them to the footer). |
 | 2 | Medium | Startup type in Quiet's column: Inter, bigger gradient titles, uppercase labels, pill nav, buttons, filters and tags, avatar (articles and About), the About tagline, reading progress bar. |
 | 3 | Spicy | The landing-page template: 1120px layout, dot grid, floating glass navbar, the GitHub header button, centred hero and headings, glass cards, contents card, the About page's "Take a look around" button. |
 | 4 | Hot | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers on research cards, dark window-framed code, and emoji everywhere: section and page badges, categories, filter pills, code-block languages, dates, headings, ✅ bullets. |

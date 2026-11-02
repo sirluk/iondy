@@ -26,6 +26,7 @@
     & .prose .note { border-color: rgb(124 58 237 / .16); border-radius: 14px; background: #faf9ff; box-shadow: 0 14px 30px -20px rgb(124 58 237 / .5); }
     & .filter-buttons button[aria-pressed='true'] { color: var(--accent); }
     & .search-field { background: var(--accent-soft); color: var(--accent); }
+    & .about-aside { display: block; }
   }
 
   /* 2 · Medium: startup type and pill buttons, still in Quiet's narrow column. */

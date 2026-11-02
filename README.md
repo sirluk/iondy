@@ -33,7 +33,7 @@ The header has an **AI slop** slider that visitors can drag from plain Quiet to 
 | Level | Name | Preview | What it adds |
 | --- | --- | --- | --- |
 | 0 | Off | [`/?slop=0`](http://127.0.0.1:4321/?slop=0) | Plain Quiet. |
-| 1 | Mild | [`/?slop=1`](http://127.0.0.1:4321/?slop=1) | Purple accent, faint colour blobs, a gradient wordmark, gradient hairlines, rounded and shadowed code blocks and images. |
+| 1 | Mild | [`/?slop=1`](http://127.0.0.1:4321/?slop=1) | Purple accent, faint colour blobs, a gradient wordmark, gradient hairlines, rounded and shadowed code blocks and images, and the About page's list of profile links, which Quiet leaves to the footer. |
 | 2 | Medium | [`/?slop=2`](http://127.0.0.1:4321/?slop=2) | Startup type, still in Quiet's narrow column: Inter, bigger gradient titles, purple uppercase labels, pill-shaped navigation, buttons, filters and tags, an author avatar on articles and the About page, the About page's tagline, and a reading progress bar on articles. |
 | 3 | Spicy | [`/?slop=3`](http://127.0.0.1:4321/?slop=3) | The landing-page template: a wide page, a fading dot grid, a floating glass navbar with a GitHub button, a centred hero and section headings, glass cards, a contents card on articles, and the About page's "Take a look around" button. |
 | 4 | Hot | [`/?slop=4`](http://127.0.0.1:4321/?slop=4) | Gradients, badges and emoji: gradient buttons, neon card outlines, accent side stripes, a Featured card, count badges, a TL;DR box, oversized outlined numbers on the research cards, dark window-framed code blocks, and emoji on headings, badges (the 404 page too), categories, filter pills, code-block languages, dates, and ✅ bullets. |
