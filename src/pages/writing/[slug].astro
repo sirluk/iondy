@@ -14,7 +14,7 @@ const posts = await getPosts();
 const index = posts.findIndex((entry) => entry.id === post.id);
 const next = posts[(index + 1) % posts.length];
 ---
-<Base title={`${post.data.title} — iondy`} description={post.data.description} active="writing">
+<Base title={`${post.data.title} — iondy`} description={post.data.description} active="writing" published={post.data.date}>
   <div class="article-layout">
     <article class="full-article">
       <a class="back-link" href="/writing/">← Back to the notebook</a>

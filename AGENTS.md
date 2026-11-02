@@ -10,7 +10,7 @@ Guidance for coding agents working on iondy.com. The README describes the projec
 - Deploy: every push to `main` runs `.github/workflows/deploy.yml` and publishes to GitHub Pages. While the `COMING_SOON` repository variable is `true`, the live site shows `coming-soon/index.html` instead; local dev always shows the real site.
 - Quiet is deliberately minimal: no filler slogans, decorative counters, badges, or heavy cards. AI slop (below) is the only exception.
 - Never change the wording of articles, their figures, or their code.
-- Diagrams redrawn for the site keep their SVG source next to the PNG the post shows; the README's "Diagrams" section has the render command.
+- Diagrams redrawn for the site keep their SVG source next to the PNG the post shows; the README's "Diagrams" section has the render command. The link-preview image `public/og-image.png` is drawn the same way, in `src/og-image.svg` (README, "Link previews").
 - Figures made from data keep their scripts and data in the post's `source/` folder, which the site doesn't publish. Its README says how to rebuild them; regenerate figures with those scripts instead of editing the PNGs. The repo is public, so `source/` holds only what rebuilds the post: no drafts, internal reports, run IDs or cluster details.
 
 ## The AI slop slider: consider it for every visible change

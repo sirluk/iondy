@@ -1,5 +1,5 @@
 ---
-title: "An practical introduction to Diff-Pruning for BERT"
+title: "A practical introduction to Diff-Pruning for BERT"
 date: "2022-02-23"
 description: "The ideas behind diff-pruning, and how to implement parameter-efficient fine-tuning in PyTorch."
 category: "Research"
@@ -362,7 +362,7 @@ There is also an extension to Diff-Pruning where an additional scalar z-values i
 
 
 
-You can find my code on [github](<https://github.com/sirluk/diff_pruning>) and some experiments I did on [tensorboard](<https://tensorboard.dev/experiment/Ax8mX3QVQ9ebvx4aZhkCxQ/>). The code is a bit more extensive than what is shown in the article as I also implemented structured Diff-Pruning for example but I am happy to answer questions about it in the comment section. The tensorboard includes runs for two datasets GLUE-SST2 and a custom dataset where a job category needs to be predicted based on short biographies. Furthermore, I tested three different model versions:
+You can find my code on [github](<https://github.com/sirluk/diff_pruning>) and some experiments I did on [tensorboard](<https://tensorboard.dev/experiment/Ax8mX3QVQ9ebvx4aZhkCxQ/>) (TensorBoard.dev has since shut down). The code is a bit more extensive than what is shown in the article as I also implemented structured Diff-Pruning for example but I am happy to answer questions about it in the comment section. The tensorboard includes runs for two datasets GLUE-SST2 and a custom dataset where a job category needs to be predicted based on short biographies. Furthermore, I tested three different model versions:
 
 
 

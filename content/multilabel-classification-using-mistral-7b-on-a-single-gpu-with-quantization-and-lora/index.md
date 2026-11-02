@@ -116,7 +116,7 @@ ds = DatasetDict({
 
 
 
-One slightly exotic package used in this snippet is probably [skmultilearn ](<http://scikit.ml/>)which I exclusively use for the function *iterative\_train\_test\_split*. This creates an even split for unbalanced multilabel datasets which is the case for this example as you can see in the visualization below. Therefore we also generate weights for our labels which we later use for calculating the loss because we would like to assign higher weights to underrepresented classes. The use of a weighted loss function is of course very dependent on your use case and the cost of trading off global accuracy vs individual class accuracy.
+One slightly exotic package used in this snippet is probably [skmultilearn ](<https://github.com/scikit-multilearn/scikit-multilearn>)which I exclusively use for the function *iterative\_train\_test\_split*. This creates an even split for unbalanced multilabel datasets which is the case for this example as you can see in the visualization below. Therefore we also generate weights for our labels which we later use for calculating the loss because we would like to assign higher weights to underrepresented classes. The use of a weighted loss function is of course very dependent on your use case and the cost of trading off global accuracy vs individual class accuracy.
 
 
 

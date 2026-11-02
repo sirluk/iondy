@@ -94,6 +94,16 @@ dir=content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/images
 
 `--window-size` is the SVG's `width` and `height`.
 
+### Link previews
+
+Every page shares one link-preview image, `public/og-image.png`, drawn in `src/og-image.svg`; `Base.astro` adds it with the page's canonical URL, and articles are marked as articles with their date. Render it at its real size:
+
+```sh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --allow-file-access-from-files --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=3000 \
+  --screenshot=public/og-image.png "file://$PWD/src/og-image.svg"
+```
+
 Code blocks take a language after the opening fence (` ```python `) for syntax highlighting. Formulas go between `$$` lines and are typeset with KaTeX when the site builds; a single `$` stays text:
 
 ```md
@@ -118,13 +128,15 @@ The note's text, with [links](https://example.com) and *emphasis*.
 
 Publications live in `papers` in `src/lib/content.ts`, in the order of the CV. `/research/` lists all of them with authors, venue, a one-line summary, and links; the homepage shows the first four. The first link of each paper is where its title points, so put arXiv first when there is an arXiv version. `authors` is optional, for papers whose author list isn't public yet.
 
-The seven imported posts retain their original article wording and 50 code blocks. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written. Since the import, these Medium leftovers were fixed without changing the wording:
+The seven imported posts retain their original article wording and 50 code blocks. Short descriptions and broad categories were added for the site's navigation. The titles are preserved as originally written, apart from two typos. Since the import, these Medium leftovers were fixed, without changing the wording except where noted:
 
 - Code blocks name their language, so all of them are highlighted.
 - The diff-pruning post's formulas, which were small images, are typeset with KaTeX.
 - The packed-sequences post's tensor printouts, which were screenshots, are text. The batched ones came from a run with other sentences; they now show the output of the article's own code, taken from its notebook.
 - The Mistral post's headings are main headings, so its contents list isn't empty.
 - The pytora post no longer repeats its title as a heading, its title uses normal spaces around the dash, and its LoRA diagram has been redrawn in the site's style.
+- Two titles had typos: "Adverserial Training" and "An practical introduction to Diff-Pruning for BERT" are now "Adversarial Training" and "A practical introduction to Diff-Pruning for BERT", and their folders and URLs match. The text of the posts keeps its original spelling.
+- Dead links: the Mistral post's skmultilearn link points to its GitHub repository instead of the defunct scikit.ml, and the diff-pruning and adversarial-training posts add "(TensorBoard.dev has since shut down)" after their TensorBoard links.
 
 ## Site source
 
@@ -183,4 +195,4 @@ Set the variable back to `true` and run the workflow again to restore the placeh
 
 DNS is managed at GoDaddy. `iondy.com` has A records for GitHub Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`), and `www` is a CNAME to `sirluk.github.io`, which GitHub redirects to `iondy.com`. A `_github-pages-challenge-sirluk` TXT record verifies the domain for the `sirluk` account.
 
-`.openai/hosting.json` and the ignored `.site-preview/` checkout belong to the earlier private ChatGPT Sites preview and are not used by the GitHub Pages deploy.
+The ignored `.site-preview/` checkout belongs to the earlier private ChatGPT Sites preview and is not used by the GitHub Pages deploy.

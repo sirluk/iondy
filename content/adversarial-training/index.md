@@ -1,5 +1,5 @@
 ---
-title: "Adverserial Training"
+title: "Adversarial Training"
 date: "2022-08-22"
 description: "Implementing gradient reversal and adversarial heads to study and reduce bias in language models."
 category: "Research"
@@ -220,7 +220,7 @@ We now already went over the essential components to make adversarial training w
 
 
 
-For the BIOS dataset I ran two experiments which can be found [**here**](<https://tensorboard.dev/experiment/RoupPbp9SoCEeC6BOEdwXA/#scalars>)
+For the BIOS dataset I ran two experiments which can be found [**here**](<https://tensorboard.dev/experiment/RoupPbp9SoCEeC6BOEdwXA/#scalars>) (TensorBoard.dev has since shut down)
 
 
 

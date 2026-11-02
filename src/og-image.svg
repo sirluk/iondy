@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Source of public/og-image.png, the picture link previews show for every page. It uses the site's font from node_modules; the README ("Link previews") has the command that renders it. -->
+  <style>
+    @font-face { font-family: 'Geist'; font-weight: 100 900; src: url('../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2'); }
+    text { font-family: 'Geist', sans-serif; }
+  </style>
+  <rect width="1200" height="630" fill="#fff" />
+  <!-- The favicon, at 80px. -->
+  <g transform="translate(96 96) scale(1.25)">
+    <rect width="64" height="64" rx="16" fill="#253d33" />
+    <path d="M25 27h8v24h-8zm0-14h8v8h-8z" fill="#f8f7f3" />
+    <circle cx="44" cy="47" r="4" fill="#c8e7b1" />
+  </g>
+  <text x="92" y="352" font-size="88" font-weight="600" letter-spacing="-2.5" fill="#18181b">Lukas Hauzenberger</text>
+  <text x="96" y="420" font-size="34" font-weight="400" fill="#63636b">Machine learning research and notes on what I’m learning.</text>
+  <text x="96" y="534" font-size="30" font-weight="500" fill="#71717a">iondy.com</text>
+</svg>
