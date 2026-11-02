@@ -126,9 +126,9 @@
   [data-look='quiet'] .page-outro { justify-content: flex-start; gap: 8px; padding-top: 56px; border: 0; font-size: 15px; }
 
   [data-look='quiet'] .about-layout { display: block; }
-  [data-look='quiet'] .about-copy p.about-lead { font: 500 17px/1.6 var(--sans); letter-spacing: -.1px; }
+  /* The tagline and the link to the writing are landing-page copy, so only AI slop shows them, from level 2. */
+  [data-look='quiet'] .about-copy p.about-lead, [data-look='quiet'] .about-copy .text-link { display: none; }
   [data-look='quiet'] .about-copy > p { font-size: 15px; line-height: 1.7; color: var(--text); margin-bottom: 16px; }
-  [data-look='quiet'] .about-copy .text-link { margin-top: 8px; }
   [data-look='quiet'] .about-aside { margin-top: 48px; padding: 0; border: 0; }
   [data-look='quiet'] .about-aside > .micro-label { margin-bottom: 8px; font-weight: 500; }
   [data-look='quiet'] .about-aside > a { justify-content: flex-start; padding: 3px 0; border: 0; font-size: 15px; }
@@ -227,7 +227,6 @@
     [data-look='quiet'] .project-detail-content > p:not(.eyebrow) { font-size: 15px; }
     [data-look='quiet'] .project-detail-links a { font-size: 15px; }
     [data-look='quiet'] .page-outro { gap: 6px; }
-    [data-look='quiet'] .about-copy p.about-lead { font-size: 17px; }
     [data-look='quiet'] .about-copy > p { font-size: 15px; }
     [data-look='quiet'] .about-aside { margin-top: 40px; }
     [data-look='quiet'] .about-aside > a > span { flex-direction: column; gap: 0; }

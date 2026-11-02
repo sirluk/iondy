@@ -21,7 +21,7 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 | --- | --- | --- |
 | 0 | Off | Plain Quiet. |
 | 1 | Mild | Purple accent, faint colour blobs, gradient wordmark and hairlines, rounded and shadowed code and images, hover pills on list rows. |
-| 2 | Medium | The landing-page template: Inter, 1120px layout, dot grid, floating glass navbar, centred hero, glass cards, pill buttons, avatar (articles and About), contents card, reading progress bar, the GitHub header button. |
+| 2 | Medium | The landing-page template: Inter, 1120px layout, dot grid, floating glass navbar, centred hero, glass cards, pill buttons, avatar (articles and About), the About tagline and writing link, contents card, reading progress bar, the GitHub header button. |
 | 3 | Spicy | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers on research cards, dark window-framed code. |
 | 4 | Hot | Emoji everywhere: section and page badges, categories, filter pills, code-block languages, dates, headings, ✅ bullets. |
 | 5 | Maximum | Parody copy (taglines, "Trusted by localhost", buzzword ribbon, Reviewer #2, "AI Summary"), `iondy.ai` above 1050px, the AI orb, "reimagined.", shimmering text, stronger glows, bigger hover lifts. |
