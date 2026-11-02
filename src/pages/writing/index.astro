@@ -7,7 +7,7 @@ const posts = await getPosts();
 const categories = ['All', 'Research', 'Engineering', 'Learning'];
 ---
 <Base title="Writing — iondy" active="writing">
-  <header class="page-intro"><h1>Writing</h1></header>
+  <header class="page-intro"><h1>Writing</h1><p class="page-tagline">Research, implementations, and what I learned along the way.</p></header>
   <div class="archive-tools">
     <div class="filter-buttons" role="group" aria-label="Filter writing by topic">{categories.map((category) => <button type="button" data-filter={category} aria-pressed={category === 'All'}>{category}<span>{category === 'All' ? posts.length : posts.filter((p) => p.data.category === category).length}</span></button>)}</div>
     <label class="search-field"><Icon name="search" size={16} /><span class="sr-only">Search writing</span><input type="search" placeholder="Search the notebook" id="writing-search" autocomplete="off" /></label>

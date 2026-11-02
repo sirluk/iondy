@@ -67,6 +67,8 @@
   [data-look='quiet'] .page-intro h1 { font: 600 20px/1.4 var(--sans); letter-spacing: -.3px; }
   [data-look='quiet'] .page-intro > p:last-of-type { font-size: 15px; line-height: 1.6; margin-top: 4px; }
   [data-look='quiet'] .page-intro .text-link { margin-top: 20px; }
+  /* A tagline under a page title is landing-page copy, like the About page's: only AI slop shows it, from level 2. */
+  [data-look='quiet'] .page-intro .page-tagline { display: none; }
 
   [data-look='quiet'] .archive-tools { justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 0 0 20px; border: 0; }
   [data-look='quiet'] .filter-buttons { gap: 18px; }

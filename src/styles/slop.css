@@ -58,6 +58,7 @@
 
     & .page-intro h1 { font: 850 40px/1.1 var(--sans); letter-spacing: -.045em; }
     & .page-intro > p:last-of-type { margin-top: 14px; font-size: 18px; line-height: 1.6; }
+    & .page-intro .page-tagline { display: block; }
     & .filter-buttons { flex-wrap: wrap; gap: 8px; }
     & .filter-buttons button { align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid rgb(124 58 237 / .16); border-radius: 999px; font-size: 14px; font-weight: 650; text-decoration: none; color: var(--muted); }
     & .filter-buttons button[aria-pressed='true'] { border-color: transparent; background: var(--accent); color: #fff; }
