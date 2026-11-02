@@ -21,9 +21,9 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 | --- | --- | --- |
 | 0 | Off | Plain Quiet. |
 | 1 | Mild | Purple accent, faint colour blobs, gradient wordmark and hairlines, rounded and shadowed code and images, hover pills on list rows. |
-| 2 | Medium | The landing-page template: Inter, 1120px layout, dot grid, floating glass navbar, centred hero, glass cards, pill buttons, avatar (articles and About), the About tagline and writing link, contents card, reading progress bar, the GitHub header button. |
-| 3 | Spicy | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers on research cards, dark window-framed code. |
-| 4 | Hot | Emoji everywhere: section and page badges, categories, filter pills, code-block languages, dates, headings, ✅ bullets. |
+| 2 | Medium | Startup type in Quiet's column: Inter, bigger gradient titles, uppercase labels, pill nav, buttons, filters and tags, avatar (articles and About), the About tagline, reading progress bar. |
+| 3 | Spicy | The landing-page template: 1120px layout, dot grid, floating glass navbar, the GitHub header button, centred hero and headings, glass cards, contents card, the About page's "Take a look around" button. |
+| 4 | Hot | Gradient buttons and pills, neon card outlines, accent side stripes, a Featured first card, count badges, TL;DR box, outlined numbers on research cards, dark window-framed code, and emoji everywhere: section and page badges, categories, filter pills, code-block languages, dates, headings, ✅ bullets. |
 | 5 | Maximum | Parody copy (taglines, "Trusted by localhost", buzzword ribbon, Reviewer #2, "AI Summary"), `iondy.ai` above 1050px, the AI orb, "reimagined.", shimmering text, stronger glows, bigger hover lifts. |
 
 ### How it works
@@ -35,7 +35,7 @@ The header has an **AI slop** slider with six cumulative levels. Level 0 is plai
 ### When you add or change something visible
 
 1. Style it in Quiet first (`quiet.css`: desktop rules in `@layer themes`, breakpoints at 1050, 760, and 550px in `@layer responsive`).
-2. Decide what it becomes at each level and add rules to the matching block in `slop.css`. Usually: 1 colour and hover; 2 a glass card or pill in the wide layout; 3 gradient or badge treatment; 4 an emoji; 5 only if there is a good joke.
+2. Decide what it becomes at each level and add rules to the matching block in `slop.css`. Usually: 1 colour and hover; 2 Inter type and pills, still in Quiet's column; 3 a glass card in the wide layout; 4 gradient or badge treatment and an emoji; 5 only if there is a good joke.
 3. Reuse the existing selector lists where the new thing behaves like an existing one, for example `:is(.post-row, .project-card, .paper-row)`.
 4. Check it at `?slop=0` through `?slop=5`, at desktop and at 390px and 760px widths, with no horizontal overflow (header included).
 
@@ -46,11 +46,11 @@ Per-item rules to update when content changes:
 - **New homepage section**: add a `.section-heading::before` badge in level 4.
 - **About links**: the level 4 emoji are matched by position (`.about-aside > a:nth-of-type(n)`); keep them in order when adding or removing links.
 - **Restored projects**: the level 4 tile emoji are matched by `.project-card:nth-child(n)`.
-- **Posts**: the level 3 TL;DR box shows the post's front-matter `description`, so keep descriptions to one clear sentence.
+- **Posts**: the level 4 TL;DR box shows the post's front-matter `description`, so keep descriptions to one clear sentence.
 - **New code language**: level 4 labels code blocks by `pre[data-language='…']` (🐍 python, 🐳 dockerfile, 📝 text, 💻 anything else); add an emoji when a post uses a new language.
 - **Header width**: between 761 and 1050px the header is one row with little room to spare at levels 4 and 5. Level 4 shortens the slider there and level 5 shows `iondy.ai` only above 1050px; anything new in the header needs the same care.
 - **Formulas**: `$$ … $$` in a post is typeset with KaTeX by the Sätteri plugin in `astro.config.mjs`; a single `$` stays text. Formulas look the same at every level; wide ones scroll sideways on phones.
-- **Info boxes**: posts mark side notes with `<aside class="note">`, with blank lines around the Markdown inside (README, "Writing and content"). Quiet styles it like a code block; levels 1 to 4 restyle it, and levels 3 and 4 add a "Deep dive" label.
+- **Info boxes**: posts mark side notes with `<aside class="note">`, with blank lines around the Markdown inside (README, "Writing and content"). Quiet styles it like a code block; levels 1, 3 and 4 restyle it, and level 4 adds a "Deep dive" label.
 
 ### Pitfalls (each one has bitten this codebase)
 

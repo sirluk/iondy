@@ -126,7 +126,7 @@
   [data-look='quiet'] .page-outro { justify-content: flex-start; gap: 8px; padding-top: 56px; border: 0; font-size: 15px; }
 
   [data-look='quiet'] .about-layout { display: block; }
-  /* The tagline and the link to the writing are landing-page copy, so only AI slop shows them, from level 2. */
+  /* The tagline and the link to the writing are landing-page copy, so only AI slop shows them: the tagline from level 2, the link from level 3. */
   [data-look='quiet'] .about-copy p.about-lead, [data-look='quiet'] .about-copy .text-link { display: none; }
   [data-look='quiet'] .about-copy > p { font-size: 15px; line-height: 1.7; color: var(--text); margin-bottom: 16px; }
   [data-look='quiet'] .about-aside { margin-top: 48px; padding: 0; border: 0; }
