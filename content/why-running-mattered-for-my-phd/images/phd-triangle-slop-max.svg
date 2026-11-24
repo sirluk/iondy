@@ -1,5 +1,5 @@
 <svg width="720" height="396" viewBox="0 0 720 396" xmlns="http://www.w3.org/2000/svg">
-  <!-- Maximum slop variant (AI slop levels 4–5) of phd-triangle.png. -->
+  <!-- Maximum slop variant (AI slop levels 4–5) of phd-triangle.png. Transparent background: level 4's neon-outlined card supplies the window. Render with a transparent background; see README ("Diagrams"). -->
   <style>
     @font-face { font-family: 'Inter'; font-weight: 100 900; src: url('../../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2'); }
     @font-face { font-family: 'Serif'; font-style: italic; font-weight: 200 900; src: url('../../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2') format('woff2'); }
@@ -7,116 +7,126 @@
     .serif-it { font-family: 'Serif', Georgia, serif; font-style: italic; font-weight: 400; }
     .top-title { font-size: 16px; font-weight: 800; letter-spacing: -.03em; }
     .badge { font-size: 9.5px; font-weight: 750; letter-spacing: .06em; }
-    .node-title { font-size: 12.5px; font-weight: 750; fill: #f5f3ff; }
-    .node-sub { font-size: 10px; font-weight: 500; fill: #a5b4fc; }
-    .muted-title { fill: #7c789a; }
-    .muted-sub { fill: #635f80; }
-    .trust { font-size: 10.5px; font-weight: 650; fill: #c4b5fd; }
+    .node-title { font-size: 12.5px; font-weight: 750; fill: #1d1b38; }
+    .node-sub { font-size: 10px; font-weight: 550; fill: #6d28d9; }
+    .legacy-title { fill: #52525b; }
+    .legacy-sub { fill: #a1a1aa; }
+    .muted-title { fill: #a1a1aa; }
+    .muted-sub { fill: #b4b4bc; }
+    .trust { font-size: 10.5px; font-weight: 650; fill: #6d28d9; }
   </style>
   <defs>
-    <linearGradient id="grad-bright" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818cf8" />
-      <stop offset="45%" stop-color="#c084fc" />
-      <stop offset="80%" stop-color="#f472b6" />
-      <stop offset="100%" stop-color="#fbbf24" />
+    <linearGradient id="grad-site" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="35%" stop-color="#a855f7" />
+      <stop offset="70%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f59e0b" />
     </linearGradient>
     <linearGradient id="grad-btn" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#6366f1" />
       <stop offset="50%" stop-color="#a855f7" />
       <stop offset="100%" stop-color="#ec4899" />
     </linearGradient>
-    <linearGradient id="grad-cyan" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f472b6" />
-      <stop offset="50%" stop-color="#a855f7" />
+    <linearGradient id="grad-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="55%" stop-color="#ec4899" />
       <stop offset="100%" stop-color="#22d3ee" />
     </linearGradient>
+    <linearGradient id="grad-cyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
     <radialGradient id="glow-orb" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity=".35" />
-      <stop offset="55%" stop-color="#ec4899" stop-opacity=".14" />
-      <stop offset="100%" stop-color="#14111f" stop-opacity="0" />
+      <stop offset="0%" stop-color="#c084fc" stop-opacity=".32" />
+      <stop offset="55%" stop-color="#f472b6" stop-opacity=".12" />
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="11" cy="11" r="1" fill="#a855f7" fill-opacity=".18" />
-    </pattern>
-    <filter id="neon" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#a855f7" flood-opacity=".55" />
+    <filter id="neon" filterUnits="userSpaceOnUse" x="-720" y="-100" width="1440" height="600">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#a855f7" flood-opacity=".5" />
+    </filter>
+    <filter id="card-shadow" filterUnits="userSpaceOnUse" x="-720" y="-100" width="1440" height="600">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#7c3aed" flood-opacity=".16" />
     </filter>
     <marker id="cyan-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
-      <path d="M0 1 9 5 0 9Z" fill="#22d3ee" />
+      <path d="M0 1 9 5 0 9Z" fill="#06b6d4" />
     </marker>
   </defs>
 
-  <!-- Outer dark window frame (square corners so CSS border-radius clips cleanly) -->
-  <rect width="720" height="396" fill="#14111f" />
-  <rect width="720" height="396" fill="url(#grid)" />
-  <circle cx="585" cy="240" r="145" fill="url(#glow-orb)" />
+  <circle cx="585" cy="240" r="150" fill="url(#glow-orb)" />
 
   <!-- Window top bar -->
   <circle cx="24" cy="24" r="5.5" fill="#ff5f57" />
   <circle cx="44" cy="24" r="5.5" fill="#febc2e" />
   <circle cx="64" cy="24" r="5.5" fill="#28c840" />
-  <text class="top-title" x="344" y="29" text-anchor="middle" fill="url(#grad-bright)">✨ The PhD Flywheel, <tspan class="serif-it">Reimagined.</tspan></text>
-  <rect x="564" y="13" width="138" height="22" rx="11" fill="rgb(255 255 255 / .08)" stroke="rgb(196 181 253 / .28)" />
-  <text class="badge" x="633" y="27.5" text-anchor="middle" fill="#c4b5fd">🤖 99.8% CONFIDENCE</text>
-  <line x1="0" y1="48" x2="720" y2="48" stroke="rgb(168 85 247 / .25)" />
+  <text class="top-title" x="344" y="29" text-anchor="middle" fill="url(#grad-site)">✨ The PhD Flywheel, <tspan class="serif-it">Reimagined.</tspan></text>
+  <rect x="564" y="13" width="138" height="22" rx="11" fill="#ede9fe" stroke="rgb(124 58 237 / .22)" />
+  <text class="badge" x="633" y="27.5" text-anchor="middle" fill="#7c3aed">🤖 99.8% CONFIDENCE</text>
+  <line x1="0" y1="48" x2="720" y2="48" stroke="rgb(124 58 237 / .14)" />
 
   <!-- Left panel: Legacy stack -->
   <g transform="translate(170 0)">
-    <rect x="-78" y="66" width="156" height="22" rx="11" fill="rgb(255 255 255 / .06)" stroke="rgb(255 255 255 / .12)" />
-    <text class="badge" x="0" y="80.5" text-anchor="middle" fill="#a1a1aa">❌ LEGACY · 0x ROI</text>
+    <rect x="-78" y="66" width="156" height="22" rx="11" fill="#f4f4f5" stroke="#e4e4e7" />
+    <text class="badge" x="0" y="80.5" text-anchor="middle" fill="#71717a">❌ LEGACY · 0x ROI</text>
 
-    <line x1="0" y1="140" x2="-82" y2="294" stroke="#4c446e" stroke-width="1.75" />
-    <line x1="0" y1="140" x2="82" y2="294" stroke="#362f52" stroke-width="1.5" stroke-dasharray="5 5" />
-    <line x1="-82" y1="294" x2="82" y2="294" stroke="#362f52" stroke-width="1.5" stroke-dasharray="5 5" />
+    <line x1="0" y1="140" x2="-82" y2="294" stroke="#c4c4cc" stroke-width="1.75" />
+    <line x1="0" y1="140" x2="82" y2="294" stroke="#dcdce1" stroke-width="1.5" stroke-dasharray="5 5" />
+    <line x1="-82" y1="294" x2="82" y2="294" stroke="#dcdce1" stroke-width="1.5" stroke-dasharray="5 5" />
 
-    <rect x="-72" y="114" width="144" height="50" rx="14" fill="#1c1730" stroke="#3f3761" stroke-width="1.25" />
-    <text class="node-title" x="0" y="136" text-anchor="middle">📄 Ship Papers</text>
-    <text class="node-sub" x="0" y="152" text-anchor="middle">Burnout Mode</text>
+    <rect x="-72" y="114" width="144" height="50" rx="14" fill="#fff" stroke="#e4e4e7" stroke-width="1.25" />
+    <text class="node-title legacy-title" x="0" y="136" text-anchor="middle">📄 Ship Papers</text>
+    <text class="node-sub legacy-sub" x="0" y="152" text-anchor="middle">Burnout Mode</text>
 
-    <rect x="-148" y="268" width="132" height="50" rx="14" fill="#1c1730" stroke="#3f3761" stroke-width="1.25" />
-    <text class="node-title" x="-82" y="290" text-anchor="middle">👥 Relationships</text>
-    <text class="node-sub" x="-82" y="306" text-anchor="middle">Bare Minimum</text>
+    <rect x="-148" y="268" width="132" height="50" rx="14" fill="#fff" stroke="#e4e4e7" stroke-width="1.25" />
+    <text class="node-title legacy-title" x="-82" y="290" text-anchor="middle">👥 Relationships</text>
+    <text class="node-sub legacy-sub" x="-82" y="306" text-anchor="middle">Bare Minimum</text>
 
-    <rect x="16" y="268" width="132" height="50" rx="14" fill="#171326" stroke="#312b4a" stroke-width="1.25" stroke-dasharray="4 4" />
+    <rect x="16" y="268" width="132" height="50" rx="14" fill="#fafafa" stroke="#dcdce1" stroke-width="1.25" stroke-dasharray="4 4" />
     <text class="node-title muted-title" x="82" y="290" text-anchor="middle">🏃 Sport</text>
     <text class="node-sub muted-sub" x="82" y="306" text-anchor="middle">💀 Churned</text>
   </g>
 
-  <!-- Right panel: Agentic Running Stack -->
+  <!-- Right panel: Running stack -->
   <g transform="translate(500 0)">
     <g filter="url(#neon)">
       <rect x="-92" y="66" width="184" height="22" rx="11" fill="url(#grad-btn)" />
     </g>
     <text class="badge" x="0" y="80.5" text-anchor="middle" fill="#fff">🚀 RUNNING STACK · SOTA</text>
 
-    <line x1="0" y1="140" x2="-82" y2="294" stroke="#8b5cf6" stroke-width="2" />
-    <line x1="0" y1="140" x2="82" y2="294" stroke="#6d28d9" stroke-width="1.75" />
-    <line x1="-82" y1="294" x2="82" y2="294" stroke="#6d28d9" stroke-width="1.75" />
+    <line x1="0" y1="140" x2="-82" y2="294" stroke="#a78bfa" stroke-width="2" />
+    <line x1="0" y1="140" x2="82" y2="294" stroke="#c4b5fd" stroke-width="1.75" />
+    <line x1="-82" y1="294" x2="82" y2="294" stroke="#c4b5fd" stroke-width="1.75" />
 
     <!-- Neon feedback arrow -->
     <g filter="url(#neon)">
       <path fill="none" stroke="url(#grad-cyan)" stroke-width="2.75" d="M 102 264 Q 134 198 76 144" marker-end="url(#cyan-arrow)" />
     </g>
-    <rect x="76" y="182" width="124" height="42" rx="12" fill="#1b1530" stroke="url(#grad-cyan)" stroke-width="1.25" />
-    <text class="node-title" x="138" y="200" text-anchor="middle" style="font-size: 10.5px;" fill="#22d3ee">🧠 +340% Ideation</text>
-    <text class="node-sub" x="138" y="214" text-anchor="middle" style="font-size: 9px;" fill="#e9d5ff">✨ 0 Hallucinations</text>
+    <g filter="url(#card-shadow)">
+      <rect x="76" y="182" width="124" height="42" rx="12" fill="#fff" stroke="url(#grad-cyan)" stroke-width="1.5" />
+    </g>
+    <text class="node-title" x="138" y="200" text-anchor="middle" style="font-size: 10.5px; fill: #7c3aed;">🧠 +340% Ideation</text>
+    <text class="node-sub" x="138" y="214" text-anchor="middle" style="font-size: 9px; fill: #62667f;">✨ 0 Hallucinations</text>
 
-    <rect x="-74" y="114" width="148" height="50" rx="14" fill="#1e1836" stroke="url(#grad-bright)" stroke-width="1.75" />
+    <g filter="url(#neon)">
+      <rect x="-74" y="114" width="148" height="50" rx="14" fill="#fff" stroke="url(#grad-neon)" stroke-width="2" />
+    </g>
     <text class="node-title" x="0" y="136" text-anchor="middle">🎓 10x Research</text>
     <text class="node-sub" x="0" y="152" text-anchor="middle">Papers · Ablations · Ideas</text>
 
-    <rect x="-148" y="268" width="132" height="50" rx="14" fill="#1e1836" stroke="#7c3aed" stroke-width="1.25" />
+    <g filter="url(#card-shadow)">
+      <rect x="-148" y="268" width="132" height="50" rx="14" fill="#fff" stroke="#a78bfa" stroke-width="1.5" />
+    </g>
     <text class="node-title" x="-82" y="290" text-anchor="middle">💜 Friends &amp; Family</text>
     <text class="node-sub" x="-82" y="306" text-anchor="middle">100% Aligned</text>
 
     <g filter="url(#neon)">
       <rect x="16" y="268" width="136" height="50" rx="14" fill="url(#grad-btn)" />
     </g>
-    <text class="node-title" x="84" y="290" text-anchor="middle" fill="#fff">🔥 Running.ai</text>
-    <text class="node-sub" x="84" y="306" text-anchor="middle" style="fill: #f5d0fe;">Zero Screens · SOTA</text>
+    <text class="node-title" x="84" y="290" text-anchor="middle" style="fill: #fff;">🔥 Running.ai</text>
+    <text class="node-sub" x="84" y="306" text-anchor="middle" style="fill: #fce7f3;">Zero Screens · Agentic</text>
   </g>
 
   <!-- Bottom trust ribbon -->
-  <line x1="0" y1="352" x2="720" y2="352" stroke="rgb(168 85 247 / .25)" />
+  <line x1="0" y1="352" x2="720" y2="352" stroke="rgb(124 58 237 / .14)" />
   <text class="trust" x="360" y="378" text-anchor="middle">🏆 Endorsed by Reviewer #2   ·   ⚡ Powered by Mitochondria   ·   ✅ 100% Human-Run</text>
 </svg>

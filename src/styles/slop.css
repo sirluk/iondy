@@ -78,6 +78,7 @@
     & .prose a, & .about-copy > p a { font-weight: 600; text-decoration: underline 2px rgb(168 85 247 / .35); text-underline-offset: 4px; }
     & .prose .slop-figure[data-slop-grade='clean'] { display: none; }
     & .prose .slop-figure[data-slop-grade='medium'] { display: block; }
+    & .prose .slop-figure img { border: 1px solid rgb(124 58 237 / .12); background: #fff; }
     & .article-tags { gap: 8px; margin-top: 52px; }
     & .article-tags > span { padding: 6px 13px; border-radius: 999px; background: var(--accent-soft); font: 650 12px var(--sans); color: var(--accent); }
     @supports (animation-timeline: scroll()) {
@@ -188,6 +189,7 @@
     & .prose img { margin: 36px auto 14px; border-radius: 20px; box-shadow: 0 24px 50px -24px rgb(30 27 75 / .45), 0 0 0 1px rgb(124 58 237 / .12); }
     & .prose pre { margin: 32px 0; padding: 22px 24px; font: 13.5px/1.7 var(--mono); }
     & .prose .note { margin: 36px 0; padding: 26px 28px; border: 1px solid var(--glass-line); border-radius: 24px; background: var(--glass); box-shadow: var(--card-shadow); font-size: 16px; }
+    & .prose .slop-figure img { border-color: var(--glass-line); border-radius: 24px; background: var(--glass); box-shadow: var(--card-shadow); }
     & .prose .note > p:first-child strong { font-size: 19px; letter-spacing: -.02em; }
     & .next-article { margin-top: 48px; padding: 30px 72px 30px 30px; border: 1px solid var(--glass-line); border-radius: 24px; background: var(--glass); box-shadow: var(--card-shadow); transition: transform .3s; }
     & .next-article:hover { transform: translateY(-4px); }
@@ -369,6 +371,7 @@
     & .prose p:has(> img) + p:has(> em:only-child)::before { content: '📸 ' / ''; }
     & .prose .slop-figure[data-slop-grade='medium'] { display: none; }
     & .prose .slop-figure[data-slop-grade='max'] { display: block; }
+    & .prose .slop-figure img { border: 1.5px solid transparent; background: linear-gradient(rgb(255 255 255 / .9), rgb(255 255 255 / .9)) padding-box, linear-gradient(135deg, rgb(124 58 237 / .5), rgb(236 72 153 / .35), rgb(34 211 238 / .45)) border-box; box-shadow: 0 30px 60px -24px rgb(76 29 149 / .45), var(--glow); }
     & .article-toc .micro-label::before { content: '📑 ' / ''; }
     & .next-article .micro-label::after { content: ' 👉' / ''; }
     & .project-detail .eyebrow::before { content: '🔥' / ''; }

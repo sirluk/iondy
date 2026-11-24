@@ -31,13 +31,13 @@ If you are incredibly disciplined, you can at most do two and a half. Looking ba
 
 <div class="slop-figure" data-slop-grade="medium">
 
-![Startup-styled side-by-side triangles comparing "The Zero-Sum Trap" under Legacy Model with "The Synergy Loop" under Growth Flywheel, where Endurance Habit feeds back into Research Output as "2x Ideation · Cognitive clarity".](images/phd-triangle-slop-medium.png)
+![Two side-by-side triangles comparing the three corners of PhD life: PhD progress, Relationships, and Sport. Left, the zero-sum view ("pick at most 2"): PhD progress and Relationships are connected while Sport is dashed and fades out as "feels like lost time". Right, in practice ("feedback loop"): Running (30–60 min · health) connects back to PhD progress with a curved arrow labeled "clears the head + research ideas".](images/phd-triangle-slop-medium.png)
 
 </div>
 
 <div class="slop-figure" data-slop-grade="max">
 
-![Dark neon AI-dashboard window titled "The PhD Flywheel, Reimagined." with 99.8% confidence, comparing "Legacy · 0x ROI" with "Running Stack · SOTA" where Running.ai drives "+340% Ideation · 0 Hallucinations" and is endorsed by Reviewer #2.](images/phd-triangle-slop-max.png)
+![Two side-by-side triangles comparing the three corners of PhD life: PhD progress, Relationships, and Sport. Left, the zero-sum view ("pick at most 2"): PhD progress and Relationships are connected while Sport is dashed and fades out as "feels like lost time". Right, in practice ("feedback loop"): Running (30–60 min · health) connects back to PhD progress with a curved arrow labeled "clears the head + research ideas".](images/phd-triangle-slop-max.png)
 
 </div>
 

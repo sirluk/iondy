@@ -43,7 +43,7 @@ The level is saved in the visitor's browser and applies to every page; `?slop=<0
 
 - `src/components/SlopSlider.astro` is the slider. Level names come from `slopLevels` in `src/lib/slop.ts`; screen readers announce them as the slider's value, while the slider itself shows only *sleek* and *slop*.
 - `src/styles/slop.css` holds all five levels. The head script in `Base.astro` writes every level up to the chosen one to `html[data-slop]` (`"1 2 3"` at level 3), so `[data-slop~='3']` means "level 3 or higher". The file sits in its own `overlays` cascade layer after `responsive`, so it overrides Quiet at every screen width and handles its own breakpoints.
-- Article text and code are unchanged at every level (posts may provide slop-level variants for a figure via `.slop-figure`). The TL;DR box shows each post's `description`, and the parody copy and emoji are added with CSS and hidden from screen readers.
+- Article text and code are unchanged at every level. A figure can have slop variants beside the original, each wrapped in `.slop-figure`: the original shows at levels 0–1, `medium` at 2–3 and `max` at 4–5. The variants have transparent backgrounds, so the level's card style supplies their surface, and they share the original's alt text. The TL;DR box shows each post's `description`, and the parody copy and emoji are added with CSS and hidden from screen readers.
 - Several of the level 1–5 tropes came from asking Codex for recognisable AI-generated-website patterns.
 
 ## Writing and content
@@ -79,7 +79,7 @@ The article starts here.
 
 A post whose figures come from data can keep the scripts and data in a `source/` folder next to `images/`, with a short README on how to rebuild them; the site builds only `index.md` and the images it shows. The sliding-window post does this.
 
-The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, `Learning`, and `Reflections`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article content is the same at every AI slop level.
+The folder name becomes the URL: `/writing/my-new-post/`. Available categories are `Research`, `Engineering`, `Learning`, and `Reflections`. Set `draft: true` to exclude a post from the site, archive, and feed. `original_url` is optional and records where an imported post was first published; the site doesn't display it. Dates and summaries drive the homepage, archive, and RSS automatically. Article text and code are the same at every AI slop level; figures can have slop variants (see "AI slop slider").
 
 ### Diagrams
 
@@ -92,7 +92,7 @@ dir=content/introducing-pytora-a-minimal-pytorch-implementation-of-lora/images
   --screenshot=$dir/lora.png "file://$PWD/$dir/lora.svg"
 ```
 
-`--window-size` is the SVG's `width` and `height`.
+`--window-size` is the SVG's `width` and `height`. A figure's slop variants are drawn without a background; add `--default-background-color=00000000` to keep the PNG transparent.
 
 ### Link previews
 
