@@ -43,7 +43,7 @@ The level is saved in the visitor's browser and applies to every page; `?slop=<0
 
 - `src/components/SlopSlider.astro` is the slider. Level names come from `slopLevels` in `src/lib/slop.ts`; screen readers announce them as the slider's value, while the slider itself shows only *sleek* and *slop*.
 - `src/styles/slop.css` holds all five levels. The head script in `Base.astro` writes every level up to the chosen one to `html[data-slop]` (`"1 2 3"` at level 3), so `[data-slop~='3']` means "level 3 or higher". The file sits in its own `overlays` cascade layer after `responsive`, so it overrides Quiet at every screen width and handles its own breakpoints.
-- Article text, figures, and code are unchanged at every level. The TL;DR box shows each post's `description`, and the parody copy and emoji are added with CSS and hidden from screen readers.
+- Article text and code are unchanged at every level (posts may provide slop-level variants for a figure via `.slop-figure`). The TL;DR box shows each post's `description`, and the parody copy and emoji are added with CSS and hidden from screen readers.
 - Several of the level 1–5 tropes came from asking Codex for recognisable AI-generated-website patterns.
 
 ## Writing and content

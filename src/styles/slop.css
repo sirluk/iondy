@@ -76,6 +76,8 @@
     & .prose h3 { margin: 38px 0 10px; font: 750 21px/1.35 var(--sans); letter-spacing: -.02em; }
     & .prose strong { font-weight: 750; color: var(--text); }
     & .prose a, & .about-copy > p a { font-weight: 600; text-decoration: underline 2px rgb(168 85 247 / .35); text-underline-offset: 4px; }
+    & .prose .slop-figure[data-slop-grade='clean'] { display: none; }
+    & .prose .slop-figure[data-slop-grade='medium'] { display: block; }
     & .article-tags { gap: 8px; margin-top: 52px; }
     & .article-tags > span { padding: 6px 13px; border-radius: 999px; background: var(--accent-soft); font: 650 12px var(--sans); color: var(--accent); }
     @supports (animation-timeline: scroll()) {
@@ -182,7 +184,7 @@
     & .article-header h1 { font-size: 50px; line-height: 1.06; }
     & .prose { max-width: 70ch; }
     & .prose :is(h2, h3) { scroll-margin-top: 110px; }
-    & .prose > p:has(> img) { margin-inline: 0; }
+    & .prose > p:has(> img), & .prose .slop-figure > p:has(> img) { margin-inline: 0; }
     & .prose img { margin: 36px auto 14px; border-radius: 20px; box-shadow: 0 24px 50px -24px rgb(30 27 75 / .45), 0 0 0 1px rgb(124 58 237 / .12); }
     & .prose pre { margin: 32px 0; padding: 22px 24px; font: 13.5px/1.7 var(--mono); }
     & .prose .note { margin: 36px 0; padding: 26px 28px; border: 1px solid var(--glass-line); border-radius: 24px; background: var(--glass); box-shadow: var(--card-shadow); font-size: 16px; }
@@ -365,6 +367,8 @@
     & .prose pre[data-language='dockerfile']::after { content: '🐳 ' attr(data-language) / ''; }
     & .prose pre[data-language='text']::after { content: '📝 ' attr(data-language) / ''; }
     & .prose p:has(> img) + p:has(> em:only-child)::before { content: '📸 ' / ''; }
+    & .prose .slop-figure[data-slop-grade='medium'] { display: none; }
+    & .prose .slop-figure[data-slop-grade='max'] { display: block; }
     & .article-toc .micro-label::before { content: '📑 ' / ''; }
     & .next-article .micro-label::after { content: ' 👉' / ''; }
     & .project-detail .eyebrow::before { content: '🔥' / ''; }

@@ -167,6 +167,8 @@
   .prose .note > :last-child { margin-bottom: 0 !important; }
   .prose img { display: block; margin: 34px auto 16px; border-radius: 2px; }
   .prose p:has(> img) { margin-block: 30px; }
+  .prose .slop-figure[data-slop-grade='medium'],
+  .prose .slop-figure[data-slop-grade='max'] { display: none; }
   .prose p:has(> img) + p:has(> em:only-child) { color: var(--muted); text-align: center; font-size: 11px; line-height: 1.7; margin-top: -16px; }
   .prose code { font: 12px/1.8 var(--mono); background: var(--surface); padding: 3px 5px; border-radius: 3px; }
   .prose pre { max-width: 100%; overflow-x: auto; padding: 24px; border: 1px solid var(--line); border-radius: 5px; margin-block: 28px; tab-size: 4; background: var(--surface) !important; color: var(--text); }
