@@ -12,7 +12,7 @@ const posts = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     description: z.string(),
-    category: z.enum(['Research', 'Engineering', 'Learning', 'Reflections']).default('Learning'),
+    category: z.enum(['Research', 'Engineering', 'Reflections']).default('Reflections'),
     tags: z.array(z.string()).default([]),
     original_url: z.string().url().optional(),
     draft: z.boolean().default(false),

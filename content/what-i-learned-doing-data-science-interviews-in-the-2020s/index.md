@@ -2,7 +2,7 @@
 title: "What I learned doing Data Science Interviews in the 2020s"
 date: "2023-12-18"
 description: "Notes on preparation, technical questions, and the interview process from both sides of the table."
-category: "Learning"
+category: "Reflections"
 tags: ["interview-preparation", "data-science", "cv", "interview-questions"]
 original_url: "https://medium.com/@lukas.hauzenberger/what-i-learned-doing-data-science-interviews-in-the-2020s-219c9517cffa"
 ---
