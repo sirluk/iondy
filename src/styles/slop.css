@@ -338,6 +338,7 @@
     & .post-row[data-category='Research'] .post-category::before { content: '🔬 ' / ''; }
     & .post-row[data-category='Engineering'] .post-category::before { content: '⚙️ ' / ''; }
     & .post-row[data-category='Learning'] .post-category::before { content: '📖 ' / ''; }
+    & .post-row[data-category='Reflections'] .post-category::before { content: '💭 ' / ''; }
     & .post-reading-time::before { content: '⏱️ ' / ''; }
     & .project-card::before { content: '🧩' / ''; display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 22px; border-radius: 16px; background: var(--grad); font-size: 24px; box-shadow: 0 10px 22px -8px rgb(168 85 247 / .8); }
     & .project-card:nth-child(2)::before { content: '🧪' / ''; }
@@ -347,6 +348,7 @@
     & .filter-buttons button[data-filter='Research']::before { content: '🔬' / ''; }
     & .filter-buttons button[data-filter='Engineering']::before { content: '⚙️' / ''; }
     & .filter-buttons button[data-filter='Learning']::before { content: '📖' / ''; }
+    & .filter-buttons button[data-filter='Reflections']::before { content: '💭' / ''; }
     & .empty-state h2::before { content: '🤔 ' / ''; }
     & .article-header .eyebrow::before { content: '🚀' / ''; }
     & .prose h2::before { content: '🚀 ' / ''; }

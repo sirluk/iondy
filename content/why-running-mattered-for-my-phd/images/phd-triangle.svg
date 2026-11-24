@@ -1,0 +1,83 @@
+<svg width="720" height="324" viewBox="0 0 720 324" xmlns="http://www.w3.org/2000/svg">
+  <!-- Source of phd-triangle.png, which the post shows. Uses the site's Geist font from node_modules; see README ("Diagrams") for the render command. -->
+  <style>
+    @font-face { font-family: 'Geist'; font-weight: 100 900; src: url('../../../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2'); }
+    text { font-family: 'Geist', sans-serif; }
+    .heading { font-size: 13px; font-weight: 600; fill: #18181b; }
+    .sub { font-size: 12px; font-weight: 400; fill: #71717a; }
+    .node-title { font-size: 13px; font-weight: 550; fill: #18181b; }
+    .node-sub { font-size: 11px; font-weight: 400; fill: #71717a; }
+    .muted-title { fill: #a1a1aa; }
+    .muted-sub { fill: #a1a1aa; }
+    .accent-text { fill: #0f766e; }
+    .edge-active { fill: none; stroke: #52525b; stroke-width: 1.75; }
+    .edge-soft { fill: none; stroke: #a1a1aa; stroke-width: 1.5; }
+    .edge-dropped { fill: none; stroke: #d4d4d8; stroke-width: 1.5; stroke-dasharray: 5 5; }
+    .edge-feedback { fill: none; stroke: #0f766e; stroke-width: 1.75; }
+    .box-active { fill: #f4f4f5; stroke: #a1a1aa; stroke-width: 1.25; }
+    .box-dropped { fill: #fafafa; stroke: #d4d4d8; stroke-width: 1.25; stroke-dasharray: 4 4; }
+    .box-accent { fill: #e7f3f1; stroke: #0f766e; stroke-width: 1.25; }
+  </style>
+  <defs>
+    <marker id="teal-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0 1 9 5 0 9Z" fill="#0f766e" />
+    </marker>
+  </defs>
+
+  <rect width="720" height="324" fill="#fff" />
+
+  <!-- Left panel: the zero-sum view ("pick at most 2") -->
+  <g transform="translate(172 -8)">
+    <text class="heading" x="0" y="34" text-anchor="middle">The zero-sum view <tspan class="sub" dx="4">pick at most 2</tspan></text>
+
+    <!-- Triangle edges -->
+    <line class="edge-active" x1="0" y1="108" x2="-82" y2="274" />
+    <line class="edge-dropped" x1="0" y1="108" x2="82" y2="274" />
+    <line class="edge-dropped" x1="-82" y1="274" x2="82" y2="274" />
+
+    <!-- Top: PhD progress -->
+    <rect class="box-active" x="-68" y="84" width="136" height="48" rx="8" />
+    <text class="node-title" x="0" y="105" text-anchor="middle">PhD progress</text>
+    <text class="node-sub" x="0" y="121" text-anchor="middle">papers &amp; deadlines</text>
+
+    <!-- Bottom-left: Relationships -->
+    <rect class="box-active" x="-144" y="250" width="124" height="48" rx="8" />
+    <text class="node-title" x="-82" y="271" text-anchor="middle">Relationships</text>
+    <text class="node-sub" x="-82" y="287" text-anchor="middle">family &amp; friends</text>
+
+    <!-- Bottom-right: Sport (dropped) -->
+    <rect class="box-dropped" x="20" y="250" width="124" height="48" rx="8" />
+    <text class="node-title muted-title" x="82" y="271" text-anchor="middle">Sport</text>
+    <text class="node-sub muted-sub" x="82" y="287" text-anchor="middle">feels like lost time</text>
+  </g>
+
+  <!-- Right panel: how running feeds back into PhD progress -->
+  <g transform="translate(510 -8)">
+    <text class="heading" x="0" y="34" text-anchor="middle">In practice <tspan class="sub accent-text" dx="4">feedback loop</tspan></text>
+
+    <!-- Triangle edges -->
+    <line class="edge-active" x1="0" y1="108" x2="-82" y2="274" />
+    <line class="edge-soft" x1="0" y1="108" x2="82" y2="274" />
+    <line class="edge-soft" x1="-82" y1="274" x2="82" y2="274" />
+
+    <!-- Feedback arc from Running up to PhD progress -->
+    <path class="edge-feedback" d="M 102 246 Q 134 176 74 114" marker-end="url(#teal-arrow)" />
+    <text class="node-sub accent-text" x="120" y="174" text-anchor="start">clears the head</text>
+    <text class="node-sub accent-text" x="120" y="189" text-anchor="start">+ research ideas</text>
+
+    <!-- Top: PhD progress -->
+    <rect class="box-active" x="-68" y="84" width="136" height="48" rx="8" />
+    <text class="node-title" x="0" y="105" text-anchor="middle">PhD progress</text>
+    <text class="node-sub" x="0" y="121" text-anchor="middle">papers &amp; deadlines</text>
+
+    <!-- Bottom-left: Relationships -->
+    <rect class="box-active" x="-144" y="250" width="124" height="48" rx="8" />
+    <text class="node-title" x="-82" y="271" text-anchor="middle">Relationships</text>
+    <text class="node-sub" x="-82" y="287" text-anchor="middle">family &amp; friends</text>
+
+    <!-- Bottom-right: Running -->
+    <rect class="box-accent" x="20" y="250" width="124" height="48" rx="8" />
+    <text class="node-title accent-text" x="82" y="271" text-anchor="middle">Running</text>
+    <text class="node-sub accent-text" x="82" y="287" text-anchor="middle">30–60 min · health</text>
+  </g>
+</svg>
